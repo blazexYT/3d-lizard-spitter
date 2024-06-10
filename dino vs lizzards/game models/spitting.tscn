@@ -1,0 +1,177 @@
+[gd_scene load_steps=14 format=3 uid="uid://cjr4swuihup1r"]
+
+[ext_resource type="Script" path="res://dino vs lizzards/game models/spitting.gd" id="1_yudo0"]
+[ext_resource type="AudioStream" uid="uid://u1pfh3a3en4d" path="res://dino vs lizzards/sounds/lama spit.mp3" id="2_gxgg0"]
+[ext_resource type="Texture2D" uid="uid://c3dckqgt2lso5" path="res://dino vs lizzards/extra stuff/spit.jpg" id="3_18v71"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_08p8w"]
+
+[sub_resource type="Animation" id="Animation_nqyie"]
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("spit block:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(3.14159, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("lama spit sound:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("spit:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("spit base:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_6fvr5"]
+resource_name = "spit"
+length = 0.5
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("spit block:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(3.14159, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("lama spit sound:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.01),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("spit:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(-0.01),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("spit base:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1clvj"]
+_data = {
+"RESET": SubResource("Animation_nqyie"),
+"spit": SubResource("Animation_6fvr5")
+}
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ljvam"]
+gravity = Vector3(0, 0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6swyx"]
+blend_mode = 1
+albedo_texture = ExtResource("3_18v71")
+emission_enabled = true
+emission_energy_multiplier = 0.3
+
+[sub_resource type="QuadMesh" id="QuadMesh_vd30x"]
+material = SubResource("StandardMaterial3D_6swyx")
+size = Vector2(0.03, 0.03)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_o0unv"]
+angle_max = 720.0
+direction = Vector3(1, 0, 1)
+spread = 20.0
+initial_velocity_max = 8.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k0lgi"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_yj5k0"]
+material = SubResource("StandardMaterial3D_k0lgi")
+top_radius = 0.01
+bottom_radius = 0.01
+height = 0.1
+
+[node name="spitting" type="Node3D"]
+script = ExtResource("1_yudo0")
+
+[node name="spit block" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.1, 0, 0, 0, 0.1, 2.53518e-07, 0, -2.53518e-07, 0.1, 0, 0, 0)
+mesh = SubResource("BoxMesh_08p8w")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_1clvj")
+}
+
+[node name="lama spit sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_gxgg0")
+volume_db = -12.0
+
+[node name="spit base" type="GPUParticles3D" parent="."]
+transform = Transform3D(-4.37114e-09, 0, 0.1, 0, 0.01, 0, -0.1, 0, -4.37114e-09, 0, 0, 0.1)
+amount = 1
+speed_scale = 0.0
+visibility_aabb = AABB(-0.001, -1, -0.001, 0.002, 2, 0.002)
+process_material = SubResource("ParticleProcessMaterial_ljvam")
+draw_pass_1 = SubResource("QuadMesh_vd30x")
+
+[node name="spit" type="GPUParticles3D" parent="."]
+transform = Transform3D(1.71962e-15, -3.93403e-08, 0.9, -0.9, -3.93403e-08, 0, 3.93403e-08, -0.9, -3.93403e-08, 0, 0, 0)
+emitting = false
+amount = 1
+lifetime = 0.5
+one_shot = true
+process_material = SubResource("ParticleProcessMaterial_o0unv")
+draw_pass_1 = SubResource("CylinderMesh_yj5k0")

@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://cl6olej4dom73"]
+
+[ext_resource type="Script" path="res://lv2.gd" id="1_fu47b"]
+[ext_resource type="PackedScene" uid="uid://cq713w21uobj0" path="res://dino vs lizzards/game models/player.tscn" id="1_fyaap"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ilu5i"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0j2ia"]
+
+[node name="StaticBody3D" type="StaticBody3D"]
+script = ExtResource("1_fu47b")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(2.035, 0, 0, 0, 0.14, 0, 0, 0, 2.035, 0, -0.06, 0)
+shape = SubResource("BoxShape3D_ilu5i")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_0j2ia")
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("1_fyaap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfrtyc8mab5y0"]
+
+[ext_resource type="Script" path="res://dino vs lizzards/game models/menu.gd" id="1_5o557"]
+
+[node name="menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5o557")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -77.0
+offset_right = 80.0
+offset_bottom = 77.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="start button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../quit button")
+text = "start 
+"
+
+[node name="levels button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "levles :)
+"
+
+[node name="options button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "options
+"
+
+[node name="quit button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../start button")
+text = "quit"
+
+[connection signal="pressed" from="VBoxContainer/start button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/levels button" to="." method="_on_levels_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/quit button" to="." method="_on_quit_button_pressed"]

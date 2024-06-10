@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbl6gacvfg7il"]
+
+[ext_resource type="Script" path="res://levelsmenu.gd" id="1_i54lt"]
+
+[node name="levelsmenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i54lt")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="level 1" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "level 1"
+
+[node name="level 2" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "level 2"
+
+[node name="level 3" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "level 3"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/level 1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/level 2" to="." method="_on_level_2_pressed"]
