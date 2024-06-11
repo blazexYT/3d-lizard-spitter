@@ -1,15 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://cfrtyc8mab5y0"]
+[gd_scene load_steps=3 format=3 uid="uid://cfrtyc8mab5y0"]
 
 [ext_resource type="Script" path="res://dino vs lizzards/game models/menu.gd" id="1_5o557"]
+[ext_resource type="Texture2D" uid="uid://c5vi828x38bqx" path="res://dino vs lizzards/extra stuff/wallpapersden.com_ocean-4k-sunset-photography-2023_3840x2160.jpg" id="2_a467f"]
 
 [node name="menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -191.0
+offset_top = -153.0
+offset_right = 211.0
+offset_bottom = 161.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5o557")
+
+[node name="Wallpapersden_comOcean-4k-sunset-photography-20233840x2160" type="Sprite2D" parent="."]
+position = Vector2(903, 552)
+scale = Vector2(0.65887, 0.681626)
+texture = ExtResource("2_a467f")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -28,23 +38,25 @@ grow_vertical = 2
 [node name="start button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 focus_neighbor_top = NodePath("../quit button")
-text = "start 
-"
+text = "𝕤𝕥𝕒𝕣𝕥"
+flat = true
 
 [node name="levels button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "levles :)
-"
+text = "𝕝𝕖𝕧𝕝𝕖𝕤 :)"
+flat = true
 
 [node name="options button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "options
+text = "𝕠𝕡𝕥𝕚𝕠𝕟𝕤
 "
+flat = true
 
 [node name="quit button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 focus_neighbor_bottom = NodePath("../start button")
-text = "quit"
+text = "𝕢𝕦𝕚𝕥"
+flat = true
 
 [connection signal="pressed" from="VBoxContainer/start button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/levels button" to="." method="_on_levels_button_pressed"]
