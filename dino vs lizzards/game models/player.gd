@@ -1,6 +1,6 @@
 extends CharacterBody3D
-
-
+#evrything to do with portal!
+var portal_id = 0 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 var mouseSensility = 300
@@ -41,3 +41,11 @@ func _input(event):
 		$head/Camera3D.rotation.x = clamp($head/Camera3D.rotation.x , deg_to_rad(-90), deg_to_rad(90))
 		mouse_relative_x = clamp(event.relative.x , -100, 100)
 		mouse_relative_y = clamp(event.relative.y , -100, 100)
+
+
+func _on_area_3d_area_entered(area): 
+	get_tree().change_scene_to_file("res://game_won.tscn")
+
+
+func _on_camera_3d_visibility_changed():
+	pass # Replace with function body.

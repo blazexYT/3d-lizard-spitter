@@ -6,7 +6,7 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7xmcc"]
 
-[node name="CharacterBody3D" type="CharacterBody3D"]
+[node name="player" type="CharacterBody3D"]
 script = ExtResource("1_waf4y")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -19,3 +19,8 @@ shape = SubResource("BoxShape3D_7xmcc")
 
 [node name="Camera3D" type="Camera3D" parent="head"]
 current = true
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 0.947222, 0.32058, 0, -0.32058, 0.947221, 0, 1.69311, 2.48281)
