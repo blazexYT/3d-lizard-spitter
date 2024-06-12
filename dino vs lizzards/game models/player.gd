@@ -43,9 +43,3 @@ func _input(event):
 		mouse_relative_y = clamp(event.relative.y , -100, 100)
 
 
-func _on_area_3d_area_entered(area): 
-	get_tree().change_scene_to_file("res://game_won.tscn")
-
-
-func _on_camera_3d_visibility_changed():
-	pass # Replace with function body.

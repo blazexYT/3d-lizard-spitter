@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://cytvlfiim47si"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0v4ou"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ridk1"]
+albedo_color = Color(0, 1, 0.572549, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_rx4o1"]
+material = SubResource("StandardMaterial3D_ridk1")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_joim6"]
+
+[node name="StaticBody3D" type="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.674001, 0, 0, 0, 1, 0, 0, 21.3286)
+physics_material_override = SubResource("PhysicsMaterial_0v4ou")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.610785, 0)
+mesh = SubResource("BoxMesh_rx4o1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.611792, 0)
+shape = SubResource("BoxShape3D_joim6")

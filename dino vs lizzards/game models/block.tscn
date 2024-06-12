@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cxxgcp52r5n3p"]
+[gd_scene load_steps=10 format=3 uid="uid://cxxgcp52r5n3p"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o3vto"]
 size = Vector3(8, 1, 11)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vewlu"]
+albedo_color = Color(0.301961, 1, 1, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_7qru2"]
 material = SubResource("StandardMaterial3D_vewlu")
@@ -12,7 +13,11 @@ material = SubResource("StandardMaterial3D_vewlu")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_36f7g"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sybps"]
+albedo_color = Color(0, 0, 0, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_4xnwy"]
+material = SubResource("StandardMaterial3D_sybps")
 
 [sub_resource type="Environment" id="Environment_p5h2o"]
 

@@ -29,6 +29,11 @@ position = Vector2(77.8116, 77.8116)
 scale = Vector2(0.303951, 0.303951)
 texture = ExtResource("2_a2fgb")
 
+[node name="how to play lv" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "how to play 
+(play this first)"
+
 [node name="level 1" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "level 1"
@@ -36,10 +41,6 @@ text = "level 1"
 [node name="level 2" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "level 2"
-
-[node name="level 3" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "level 3"
 
 [node name="menu" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -103,6 +104,7 @@ position = Vector2(1789, 765)
 rotation = -3.14159
 texture = ExtResource("2_a2fgb")
 
+[connection signal="pressed" from="MarginContainer/VBoxContainer/how to play lv" to="." method="_on_how_to_play_lv_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/level 1" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/level 2" to="." method="_on_level_2_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/menu" to="." method="_on_menu_pressed"]

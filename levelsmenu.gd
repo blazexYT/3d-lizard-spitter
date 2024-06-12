@@ -22,3 +22,7 @@ func _on_level_2_pressed():
 
 func _on_menu_pressed():
 	get_tree().change_scene_to_file("res://dino vs lizzards/game models/menu.tscn")
+
+
+func _on_how_to_play_lv_pressed():
+	get_tree().change_scene_to_file("res://how_to_play.tscn")
