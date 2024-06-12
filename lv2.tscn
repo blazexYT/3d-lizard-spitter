@@ -10,12 +10,15 @@
 [node name="StaticBody3D" type="StaticBody3D"]
 script = ExtResource("1_fu47b")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(2.035, 0, 0, 0, 0.14, 0, 0, 0, 2.035, 0, -0.06, 0)
 shape = SubResource("BoxShape3D_ilu5i")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
 mesh = SubResource("PlaneMesh_0j2ia")
+skeleton = NodePath("../..")
 
-[node name="CharacterBody3D" parent="." instance=ExtResource("1_fyaap")]
+[node name="CharacterBody3D" parent="Area3D" instance=ExtResource("1_fyaap")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
