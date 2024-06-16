@@ -1,8 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://cr1nj3w625dhd"]
+[gd_scene load_steps=14 format=3 uid="uid://cr1nj3w625dhd"]
 
 [ext_resource type="Script" path="res://how_to_play.gd" id="1_qfm0l"]
 [ext_resource type="PackedScene" uid="uid://cq713w21uobj0" path="res://dino vs lizzards/game models/player.tscn" id="1_qray2"]
 [ext_resource type="PackedScene" uid="uid://du2v6636mgq4l" path="res://block2.tscn" id="3_gd4q2"]
+[ext_resource type="PackedScene" uid="uid://evgrfe41qw21" path="res://dino vs lizzards/game models/zombie.tscn" id="4_3byua"]
+[ext_resource type="Script" path="res://dino vs lizzards/game models/zombie.gd" id="5_oiqwf"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_05s87"]
 
@@ -15,6 +17,9 @@ material = SubResource("StandardMaterial3D_e5h5g")
 [sub_resource type="Skin" id="Skin_4okgg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w86ib"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_wmkqo"]
+agent_max_slope = 60.0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_eog0v"]
 
@@ -44,40 +49,19 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.5
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707033, 0.707181, 0, -0.707181, 0.707033, -0.0614033, 16.685, 10.7122)
 
-[node name="block" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.365, 3.35192e-16, 1.46517e-23, 0, -1.59547e-08, 0.365, 3.35192e-16, -0.365, -1.59547e-08, -0.0406047, 0.510347, 3.24647)
-mesh = SubResource("PlaneMesh_eog0v")
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_wmkqo")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="block"]
-transform = Transform3D(0.02, 0, 2.06637e-09, -1.45519e-11, 2.63, -3.25963e-09, -3.82897e-10, 4.47035e-08, 0.175, 0.0364588, -0.0518711, -1.13568)
-mesh = SubResource("PlaneMesh_6mtuy")
-
-[node name="Label3D" type="Label3D" parent="block"]
-transform = Transform3D(-1.37931, 5.20717e-29, -1.20583e-07, -1.20583e-07, -6.02916e-08, 1.37931, -5.27085e-15, 1.37931, 6.02915e-08, -0.0110228, 0.0618601, 0.643538)
-pixel_size = 0.0041
-modulate = Color(0, 1, 1, 1)
-text = "use w,a,s,d to move 
-around 
-"
-
-[node name="Label3D2" type="Label3D" parent="block"]
-transform = Transform3D(-1.37931, 8.23294e-29, -1.20583e-07, -1.20583e-07, -6.02916e-08, 1.37931, -5.27085e-15, 1.37931, 6.02915e-08, -0.000545323, 0.000647545, -0.196631)
-pixel_size = 0.0041
-modulate = Color(0, 1, 1, 1)
-text = "using those key 
-move forward towards
-the green block in 
-infront of you"
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="NavigationRegion3D"]
 transform = Transform3D(0.30626, -0.198569, -8.67972e-09, -5.5889e-16, -1.59547e-08, 0.365, -0.198569, -0.30626, -1.33871e-08, 1.24933, 0.510347, 20.0943)
 mesh = SubResource("PlaneMesh_eog0v")
+skeleton = NodePath("../..")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D2"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/MeshInstance3D2"]
 transform = Transform3D(0.02, 0, 2.06637e-09, -9.31323e-10, 2.63, -3.25963e-09, -3.82897e-10, 4.47035e-08, 0.175, 0.0364609, -0.0518684, -1.13568)
 mesh = SubResource("PlaneMesh_6mtuy")
 
-[node name="Label3D" type="Label3D" parent="MeshInstance3D2"]
+[node name="Label3D" type="Label3D" parent="NavigationRegion3D/MeshInstance3D2"]
 transform = Transform3D(-1.37931, 9.62624e-16, 2.38419e-07, 1.19209e-07, -6.02916e-08, 1.37931, -2.84217e-14, 1.37931, 6.02914e-08, -0.0110226, 0.0618591, -0.00978959)
 pixel_size = 0.0041
 modulate = Color(0, 1, 1, 1)
@@ -86,17 +70,48 @@ to jump use the
 spacebar to get on 
 that block"
 
-[node name="block2" parent="." instance=ExtResource("3_gd4q2")]
+[node name="block2" parent="NavigationRegion3D" instance=ExtResource("3_gd4q2")]
 transform = Transform3D(1, 0, 0, 0, 0.642436, 0, 0, 0, 1, 0, 0.338067, 20.802)
 
-[node name="Node3D" parent="." instance=ExtResource("3_gd4q2")]
+[node name="Node3D" parent="NavigationRegion3D" instance=ExtResource("3_gd4q2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.143907, 23.369)
 
-[node name="Node3D2" parent="." instance=ExtResource("3_gd4q2")]
+[node name="Node3D2" parent="NavigationRegion3D" instance=ExtResource("3_gd4q2")]
 transform = Transform3D(1, 0, 0, 0, 0.65949, 0, 0, 0, 1, 0, 0.968058, 24.3495)
 
-[node name="Node3D3" parent="." instance=ExtResource("3_gd4q2")]
+[node name="Node3D3" parent="NavigationRegion3D" instance=ExtResource("3_gd4q2")]
 transform = Transform3D(1, 0, 0, 0, 0.622928, 0, 0, 0, 1, 0, 0.967499, 27.1258)
 
-[node name="Node3D4" parent="." instance=ExtResource("3_gd4q2")]
+[node name="Node3D4" parent="NavigationRegion3D" instance=ExtResource("3_gd4q2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.147614, 28.1364)
+
+[node name="block" type="MeshInstance3D" parent="NavigationRegion3D"]
+transform = Transform3D(0.365, 3.35192e-16, 1.46517e-23, 0, -1.59547e-08, 0.365, 3.35192e-16, -0.365, -1.59547e-08, -0.0406047, 0.510347, 3.24647)
+mesh = SubResource("PlaneMesh_eog0v")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/block"]
+transform = Transform3D(0.02, 0, 2.06637e-09, -1.45519e-11, 2.63, -3.25963e-09, -3.82897e-10, 4.47035e-08, 0.175, 0.0364588, -0.0518711, -1.13568)
+mesh = SubResource("PlaneMesh_6mtuy")
+
+[node name="Label3D" type="Label3D" parent="NavigationRegion3D/block"]
+transform = Transform3D(-1.37931, 5.20717e-29, -1.20583e-07, -1.20583e-07, -6.02916e-08, 1.37931, -5.27085e-15, 1.37931, 6.02915e-08, -0.0110228, 0.0618601, 0.643538)
+pixel_size = 0.0041
+modulate = Color(0, 1, 1, 1)
+text = "use w,a,s,d to move 
+around 
+"
+
+[node name="Label3D2" type="Label3D" parent="NavigationRegion3D/block"]
+transform = Transform3D(-1.37931, 8.23294e-29, -1.20583e-07, -1.20583e-07, -6.02916e-08, 1.37931, -5.27085e-15, 1.37931, 6.02915e-08, -0.000545323, 0.000647545, -0.196631)
+pixel_size = 0.0041
+modulate = Color(0, 1, 1, 1)
+text = "using those key 
+move forward towards
+the green block in 
+infront of you"
+
+[node name="Zombie" parent="NavigationRegion3D" instance=ExtResource("4_3byua")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.00741, 0, 0)
+script = ExtResource("5_oiqwf")
+player_path = NodePath("../../player")
