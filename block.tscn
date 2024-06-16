@@ -11,7 +11,7 @@ material = SubResource("StandardMaterial3D_ridk1")
 [sub_resource type="BoxShape3D" id="BoxShape3D_joim6"]
 
 [node name="StaticBody3D" type="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 0.674001, 0, 0, 0, 1, 0, 0, 21.3286)
+transform = Transform3D(1, 0, 0, 0, 0.674001, 0, 0, 0, 1, 0, 0, 0)
 physics_material_override = SubResource("PhysicsMaterial_0v4ou")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

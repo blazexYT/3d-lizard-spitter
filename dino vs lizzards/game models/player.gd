@@ -6,6 +6,14 @@ const JUMP_VELOCITY = 4.5
 var mouseSensility = 300
 var mouse_relative_x = 0
 var mouse_relative_y = 0
+
+# bullets 
+var bullet = load("res://dino vs lizzards/game models/Bullet.tscn")
+var instance
+
+#onready
+@onready var gun_anim = $head/Camera3D/Rifle/AnimationPlayer
+@onready var gun_barrel = $head/Camera3D/Rifle/RayCast3D
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 func _ready():
@@ -30,6 +38,14 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
+	# shooting 
+	if Input.is_action_pressed("shoot"):
+		if !gun_anim.is_playing():
+			gun_anim.play("Shoot")
+			instance = bullet.instantiate()
+			instance.position = gun_barrel.global_position
+			instance.transform.basis = gun_barrel.global_transform.basis
+			get_parent().add_child(instance)
 
 	move_and_slide()
 

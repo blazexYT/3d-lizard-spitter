@@ -13,7 +13,7 @@ func _process(_delta):
 
 
 func _on_level_1_pressed():
-	get_tree().change_scene_to_file("res://dino vs lizzards/game models/main'.tscn")
+	get_tree().change_scene_to_file("res://dino vs lizzards/game models/lv1a.tscn")
 
 
 func _on_level_2_pressed():

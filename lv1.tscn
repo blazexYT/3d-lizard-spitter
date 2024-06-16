@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://usp7fd5vbxqs"]
+
+[ext_resource type="Script" path="res://Node3D.gd" id="1_maofh"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ot23x"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_pqwuy"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_maofh")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("CapsuleShape3D_ot23x")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
+mesh = SubResource("CapsuleMesh_pqwuy")
+skeleton = NodePath("../..")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

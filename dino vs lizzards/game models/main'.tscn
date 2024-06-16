@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dckbjflsh2130"]
+[gd_scene load_steps=8 format=3 uid="uid://dckbjflsh2130"]
 
 [ext_resource type="PackedScene" uid="uid://cxxgcp52r5n3p" path="res://dino vs lizzards/game models/block.tscn" id="1_doh77"]
 [ext_resource type="Script" path="res://dino vs lizzards/game models/main'.gd" id="1_nq76v"]
@@ -7,17 +7,23 @@
 [ext_resource type="PackedScene" uid="uid://byq73fgcoykd3" path="res://portal.tscn" id="5_a6jxq"]
 [ext_resource type="AudioStream" uid="uid://b63y3gr04e0qf" path="res://dino vs lizzards/sounds/endlessmotion.mp3" id="6_qkkbj"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_j1niy"]
+
 [node name="main\'" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -3)
 script = ExtResource("1_nq76v")
 
 [node name="block" parent="." instance=ExtResource("1_doh77")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014338, 0.223749, -0.0705676)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="block"]
+transform = Transform3D(10000, 0, 0, 0, 0.5, 0, 0, 0, 10000, 0, 0, 0)
+shape = SubResource("BoxShape3D_j1niy")
 
 [node name="player" parent="." instance=ExtResource("2_fa7wn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.774, 1, 0)
 
 [node name="water" parent="." instance=ExtResource("3_b0b8b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 133.154, 24.0624, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 0)
