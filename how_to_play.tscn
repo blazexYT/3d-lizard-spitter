@@ -19,7 +19,10 @@ material = SubResource("StandardMaterial3D_e5h5g")
 [sub_resource type="BoxShape3D" id="BoxShape3D_w86ib"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_wmkqo"]
-agent_max_slope = 60.0
+agent_height = 500.0
+agent_radius = 500.0
+agent_max_climb = 500.0
+agent_max_slope = 90.0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_eog0v"]
 
@@ -50,6 +53,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.5
 transform = Transform3D(1, 0, 0, 0, 0.707033, 0.707181, 0, -0.707181, 0.707033, -0.0614033, 16.685, 10.7122)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.136687, -0.020247, -0.153746)
 navigation_mesh = SubResource("NavigationMesh_wmkqo")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="NavigationRegion3D"]
@@ -71,7 +75,7 @@ spacebar to get on
 that block"
 
 [node name="block2" parent="NavigationRegion3D" instance=ExtResource("3_gd4q2")]
-transform = Transform3D(1, 0, 0, 0, 0.642436, 0, 0, 0, 1, 0, 0.338067, 20.802)
+transform = Transform3D(1, 0, 0, 0, 0.642436, 0, 0, 0, 1, -0.0288553, 0.338067, 20.802)
 
 [node name="Node3D" parent="NavigationRegion3D" instance=ExtResource("3_gd4q2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.143907, 23.369)
