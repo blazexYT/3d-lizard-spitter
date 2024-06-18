@@ -26,7 +26,5 @@ func _process(delta):
 func _on_timer_timeout():
 	queue_free()
 
-
-
-func _on_area_3d_body_entered(body):
-	print(name)
+func _ready() -> void:
+	pass
