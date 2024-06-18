@@ -17,7 +17,7 @@ func _on_level_1_pressed():
 
 
 func _on_level_2_pressed():
-	get_tree().change_scene_to_file("res://dino vs lizzards/menus/levelsmenu.tscn")
+	get_tree().change_scene_to_file("res://testing ground.tscn")
 
 
 func _on_menu_pressed():

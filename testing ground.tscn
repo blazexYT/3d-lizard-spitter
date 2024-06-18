@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://nsurnwwxm83b"]
+
+[ext_resource type="Script" path="res://testing ground.gd" id="1_1luag"]
+[ext_resource type="PackedScene" uid="uid://cq713w21uobj0" path="res://dino vs lizzards/game models/player.tscn" id="2_erh23"]
+[ext_resource type="PackedScene" uid="uid://dx3eqy37wu0wp" path="res://enimes.tscn" id="3_pnimr"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_l3knl"]
+vertices = PackedVector3Array(-9.5, 1.05508, -9.5, -9.5, 1.05508, 9.5, 9.5, 1.05508, 9.5, 9.5, 1.05508, -9.5)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0nky5"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_a3lxx"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_1luag")
+
+[node name="player" parent="." instance=ExtResource("2_erh23")]
+transform = Transform3D(1, 0, 0, 0, 1.655, 0, 0, 0, 1, -0.0161088, 2.14362, -0.429247)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_l3knl")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D"]
+transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_0nky5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0550778, 0)
+mesh = SubResource("BoxMesh_a3lxx")
+
+[node name="enimes" parent="NavigationRegion3D" instance=ExtResource("3_pnimr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.73015, 1.62179, -0.894546)

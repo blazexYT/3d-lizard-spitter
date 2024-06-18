@@ -4,13 +4,12 @@ const SPEED = 40.0
 
 
 #onready
-@onready var mesh = $MeshInstance3D
+@onready var mesh = $Area3D/MeshInstance3D
 @onready var ray = $RayCast3D
 @onready var particles = $GPUParticles3D
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
+func _ready() -> void:
+	pass
 
 
 
@@ -23,6 +22,11 @@ func _process(delta):
 		particles.emitting = true
 		await  get_tree().create_timer(1.0).timeout
 		queue_free()
-
+						
 func _on_timer_timeout():
 	queue_free()
+
+
+
+func _on_area_3d_body_entered(body):
+	print(name)

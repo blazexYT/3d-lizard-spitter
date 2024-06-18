@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwj2fe33ah3oj"]
+
+[ext_resource type="Script" path="res://walker.gd" id="1_lldx4"]
+[ext_resource type="PackedScene" uid="uid://dvjwptwpvq2n" path="res://dino vs lizzards/game models/steampunk_rifle.tscn" id="2_2ndu6"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_prpmo"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ggoox"]
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+script = ExtResource("1_lldx4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_prpmo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_ggoox")
+
+[node name="head" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.558007, 0)
+
+[node name="Steampunk Rifle" parent="head/Camera3D" instance=ExtResource("2_2ndu6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.517748, -0.279965, -0.635298)

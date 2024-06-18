@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://d0xm7ok8eowa2"]
+[gd_scene load_steps=8 format=3 uid="uid://d0xm7ok8eowa2"]
 
 [ext_resource type="Script" path="res://dino vs lizzards/game models/Bullet.gd" id="1_2tqq2"]
 
@@ -10,6 +10,9 @@ albedo_color = Color(1, 1, 0.545098, 1)
 emission_enabled = true
 emission = Color(1, 1, 0, 1)
 emission_energy_multiplier = 5.0
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qj5w7"]
+points = PackedVector3Array(-0.0287037, -0.0287037, -0.503704, 0.0305556, 0.0305556, 0.503704, 0.0305556, -0.0287037, 0.503704, 0.0305556, 0.0305556, -0.503704, -0.0287037, 0.0305556, 0.503704, -0.0287037, -0.0287037, 0.503704, 0.0305556, -0.0287037, -0.503704, -0.0287037, 0.0305556, -0.503704)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fort1"]
 albedo_color = Color(1, 1, 0, 1)
@@ -28,9 +31,15 @@ size = Vector3(0.04, 0.04, 0.04)
 [node name="Bullet" type="Node3D"]
 script = ExtResource("1_2tqq2")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
 mesh = SubResource("BoxMesh_2a4ms")
+skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_tfxqe")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("ConvexPolygonShape3D_qj5w7")
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
 target_position = Vector3(0, 0, -0.6)
@@ -49,4 +58,5 @@ wait_time = 10.0
 one_shot = true
 autostart = true
 
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

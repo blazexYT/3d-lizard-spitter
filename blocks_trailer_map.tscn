@@ -1,16 +1,28 @@
-[gd_scene load_steps=5 format=3 uid="uid://d2purhs4mulif"]
+[gd_scene load_steps=6 format=3 uid="uid://d2purhs4mulif"]
 
 [ext_resource type="PackedScene" uid="uid://cvgotpkw42wb0" path="res://dino vs lizzards/maps/Blocks Trailer Map.glb" id="1_73su6"]
 [ext_resource type="Script" path="res://blocks_trailer_map.gd" id="2_kmump"]
 [ext_resource type="PackedScene" uid="uid://evgrfe41qw21" path="res://dino vs lizzards/game models/zombie.tscn" id="2_ybyd8"]
 [ext_resource type="PackedScene" uid="uid://cq713w21uobj0" path="res://dino vs lizzards/game models/player.tscn" id="3_hn4no"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_f307a"]
+size = Vector3(1, 1, 1.49219)
+
 [node name="Blocks Trailer Map" instance=ExtResource("1_73su6")]
 transform = Transform3D(1000, 0, 0, 0, 1000, 0, 0, 0, 1000, 0, 603.144, 0)
 script = ExtResource("2_kmump")
+
+[node name="Node" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00757444, -0.0210548, -0.0235698)
 
 [node name="Zombie" parent="." index="1" instance=ExtResource("2_ybyd8")]
 transform = Transform3D(0.055, 0, 0, 0, 0.055, 0, 0, 0, 0.055, 0, 0, 0)
 
 [node name="player" parent="." index="2" instance=ExtResource("3_hn4no")]
 transform = Transform3D(0.0298859, -0.00435691, 0, 0.00261415, 0.0498098, 0, 0, 0, -0.03, -0.0161088, -0.267865, -0.429247)
+
+[node name="Area3D" type="Area3D" parent="." index="3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(0.999995, 0, 0, 0, 0.999995, 0, 0, 0, 0.999995, -0.0698452, -0.892179, -0.246094)
+shape = SubResource("BoxShape3D_f307a")
