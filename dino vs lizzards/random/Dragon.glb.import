@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://1gfq66eo0yrk"
-path="res://.godot/imported/Dragon.glb-0cad6f075e9506971a96809cfc0bdeca.scn"
+path="res://.godot/imported/Dragon.glb-39c47a36807e24b0780ce3a307a07481.scn"
 
 [deps]
 
-source_file="res://Dragon.glb"
-dest_files=["res://.godot/imported/Dragon.glb-0cad6f075e9506971a96809cfc0bdeca.scn"]
+source_file="res://dino vs lizzards/random/Dragon.glb"
+dest_files=["res://.godot/imported/Dragon.glb-39c47a36807e24b0780ce3a307a07481.scn"]
 
 [params]
 

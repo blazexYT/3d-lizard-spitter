@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dpqw1tx8o7ed8"
-path="res://.godot/imported/Zombie.glb-ead7cfed6b4f3038675956205a7ed186.scn"
+path="res://.godot/imported/Zombie.glb-9d53dad73131ac314a97ffafeba2253a.scn"
 
 [deps]
 
-source_file="res://dino vs lizzards/Zombie.glb"
-dest_files=["res://.godot/imported/Zombie.glb-ead7cfed6b4f3038675956205a7ed186.scn"]
+source_file="res://dino vs lizzards/random/Zombie.glb"
+dest_files=["res://.godot/imported/Zombie.glb-9d53dad73131ac314a97ffafeba2253a.scn"]
 
 [params]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dp7h1hw7ti30q"]
 
-[ext_resource type="Script" path="res://enime.gd" id="1_cowcj"]
+[ext_resource type="Script" path="res://dino vs lizzards/random/enime.gd" id="1_cowcj"]
 [ext_resource type="PackedScene" uid="uid://d0xm7ok8eowa2" path="res://dino vs lizzards/game models/Bullet.tscn" id="2_spg1g"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_n7yko"]
@@ -26,6 +26,9 @@ debug_enabled = true
 
 [node name="Bullet" parent="." instance=ExtResource("2_spg1g")]
 
+[node name="Area3D" type="Area3D" parent="."]
+
 [connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
 [connection signal="target_reached" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_target_reached"]
 [connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_velocity_computed"]
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]

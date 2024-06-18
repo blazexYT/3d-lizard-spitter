@@ -3,7 +3,7 @@ extends CharacterBody3D
 var SPEED = 3.0
 var health: float =  100.0
 
-
+var bullet = $Bullet
 
 	
 	
@@ -31,7 +31,7 @@ func _on_navigation_agent_3d_velocity_computed(safe_velocity):
 	move_and_slide()
 
 
-func _on_child_entered_tree(node):
+func _on_child_entered_tree(_node):
 	pass
 	
 func _apply_damage(damage: float) -> void:
@@ -39,3 +39,8 @@ func _apply_damage(damage: float) -> void:
 	 	
 
 	
+
+
+func _on_area_3d_area_entered(area):
+	if area.name == bullet
+	queue_free()

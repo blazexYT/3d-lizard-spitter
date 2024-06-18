@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dwj2fe33ah3oj"]
 
-[ext_resource type="Script" path="res://walker.gd" id="1_lldx4"]
+[ext_resource type="Script" path="res://dino vs lizzards/random/walker.gd" id="1_lldx4"]
 [ext_resource type="PackedScene" uid="uid://dvjwptwpvq2n" path="res://dino vs lizzards/game models/steampunk_rifle.tscn" id="2_2ndu6"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_prpmo"]

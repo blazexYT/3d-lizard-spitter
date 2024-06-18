@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://d2purhs4mulif"]
 
 [ext_resource type="PackedScene" uid="uid://cvgotpkw42wb0" path="res://dino vs lizzards/maps/Blocks Trailer Map.glb" id="1_73su6"]
-[ext_resource type="Script" path="res://blocks_trailer_map.gd" id="2_kmump"]
+[ext_resource type="Script" path="res://dino vs lizzards/random/blocks_trailer_map.gd" id="2_kmump"]
 [ext_resource type="PackedScene" uid="uid://evgrfe41qw21" path="res://dino vs lizzards/game models/zombie.tscn" id="2_ybyd8"]
 [ext_resource type="PackedScene" uid="uid://cq713w21uobj0" path="res://dino vs lizzards/game models/player.tscn" id="3_hn4no"]
 

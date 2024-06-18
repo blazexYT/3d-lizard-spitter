@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://nsurnwwxm83b"]
 
-[ext_resource type="Script" path="res://testing ground.gd" id="1_1luag"]
+[ext_resource type="Script" path="res://dino vs lizzards/random/testing ground.gd" id="1_1luag"]
 [ext_resource type="PackedScene" uid="uid://cq713w21uobj0" path="res://dino vs lizzards/game models/player.tscn" id="2_erh23"]
-[ext_resource type="PackedScene" uid="uid://dx3eqy37wu0wp" path="res://enimes.tscn" id="3_pnimr"]
+[ext_resource type="PackedScene" uid="uid://dx3eqy37wu0wp" path="res://dino vs lizzards/random/enimes.tscn" id="3_pnimr"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_l3knl"]
 vertices = PackedVector3Array(-9.5, 1.05508, -9.5, -9.5, 1.05508, 9.5, 9.5, 1.05508, 9.5, 9.5, 1.05508, -9.5)

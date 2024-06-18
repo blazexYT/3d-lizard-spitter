@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://x7smrjdu7qso"]
 
-[ext_resource type="Script" path="res://game_won.gd" id="1_mkbmg"]
+[ext_resource type="Script" path="res://dino vs lizzards/random/game_won.gd" id="1_mkbmg"]
 
 [node name="game won" type="Control"]
 layout_mode = 3

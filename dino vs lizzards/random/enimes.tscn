@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dx3eqy37wu0wp"]
 
-[ext_resource type="Script" path="res://CharacterBody3D.gd" id="1_v8lih"]
+[ext_resource type="Script" path="res://dino vs lizzards/random/CharacterBody3D.gd" id="1_v8lih"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_oj2a6"]
 

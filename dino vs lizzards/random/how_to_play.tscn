@@ -1,8 +1,8 @@
 [gd_scene load_steps=13 format=3 uid="uid://cr1nj3w625dhd"]
 
-[ext_resource type="Script" path="res://how_to_play.gd" id="1_qfm0l"]
+[ext_resource type="Script" path="res://dino vs lizzards/random/how_to_play.gd" id="1_qfm0l"]
 [ext_resource type="PackedScene" uid="uid://cq713w21uobj0" path="res://dino vs lizzards/game models/player.tscn" id="1_qray2"]
-[ext_resource type="PackedScene" uid="uid://du2v6636mgq4l" path="res://block2.tscn" id="3_gd4q2"]
+[ext_resource type="PackedScene" uid="uid://du2v6636mgq4l" path="res://dino vs lizzards/random/block2.tscn" id="3_gd4q2"]
 [ext_resource type="PackedScene" uid="uid://evgrfe41qw21" path="res://dino vs lizzards/game models/zombie.tscn" id="4_3byua"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_05s87"]

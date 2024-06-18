@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://dino vs lizzards/game models/main'.gd" id="1_nq76v"]
 [ext_resource type="PackedScene" uid="uid://cq713w21uobj0" path="res://dino vs lizzards/game models/player.tscn" id="2_fa7wn"]
 [ext_resource type="PackedScene" uid="uid://wpfv3fbphp2j" path="res://dino vs lizzards/game models/water.tscn" id="3_b0b8b"]
-[ext_resource type="PackedScene" uid="uid://byq73fgcoykd3" path="res://portal.tscn" id="5_a6jxq"]
+[ext_resource type="PackedScene" uid="uid://byq73fgcoykd3" path="res://dino vs lizzards/random/portal.tscn" id="5_a6jxq"]
 [ext_resource type="AudioStream" uid="uid://b63y3gr04e0qf" path="res://dino vs lizzards/sounds/endlessmotion.mp3" id="6_qkkbj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_j1niy"]

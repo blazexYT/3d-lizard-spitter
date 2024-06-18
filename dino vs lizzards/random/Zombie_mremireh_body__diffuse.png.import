@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnluqy07r6xar"
-path.s3tc="res://.godot/imported/Zombie_mremireh_shoe_diffuse.png-d5a32a53427a6a632e5eb6c3ad211e48.s3tc.ctex"
+uid="uid://cd78836cai35g"
+path.s3tc="res://.godot/imported/Zombie_mremireh_body__diffuse.png-40b87b5fb8f150ace2a439aec89b7a23.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "aef153818c4765a38ddc11225a618239"
+"md5": "6cbf9d2088f8099044ae3a7a862463b2"
 }
 
 [deps]
 
-source_file="res://dino vs lizzards/Zombie_mremireh_shoe_diffuse.png"
-dest_files=["res://.godot/imported/Zombie_mremireh_shoe_diffuse.png-d5a32a53427a6a632e5eb6c3ad211e48.s3tc.ctex"]
+source_file="res://dino vs lizzards/random/Zombie_mremireh_body__diffuse.png"
+dest_files=["res://.godot/imported/Zombie_mremireh_body__diffuse.png-40b87b5fb8f150ace2a439aec89b7a23.s3tc.ctex"]
 
 [params]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://evgrfe41qw21"]
 
-[ext_resource type="PackedScene" uid="uid://dpqw1tx8o7ed8" path="res://dino vs lizzards/Zombie.glb" id="1_i6bcb"]
+[ext_resource type="PackedScene" uid="uid://dpqw1tx8o7ed8" path="res://dino vs lizzards/random/Zombie.glb" id="1_i6bcb"]
 [ext_resource type="Script" path="res://dino vs lizzards/game models/zombie.gd" id="2_npqc2"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0n6gc"]

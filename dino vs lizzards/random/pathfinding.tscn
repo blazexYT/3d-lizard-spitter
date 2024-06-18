@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://dtgwgx0n3i0bo"]
 
-[ext_resource type="Script" path="res://pathfinding.gd" id="1_uq3qw"]
-[ext_resource type="Script" path="res://CharacterBody3D2.gd" id="3_3p3dd"]
+[ext_resource type="Script" path="res://dino vs lizzards/random/pathfinding.gd" id="1_uq3qw"]
+[ext_resource type="Script" path="res://dino vs lizzards/random/CharacterBody3D2.gd" id="3_3p3dd"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_uat1s"]
 vertices = PackedVector3Array(-149.5, 0.546165, 0, -0.75, 0.546165, 0, -0.75, 0.546165, -0.75, -0.75, 0.546165, -0.75, 0, 0.546165, -1, 0, 0.546165, -149.5, -149.5, 0.546165, -149.5, -149.5, 0.546165, 0, 0.75, 0.546165, -0.75, 0.75, 0.546165, 0, 149.5, 0.546165, 0, 0, 0.546165, -149.5, 0, 0.546165, -1, 0.75, 0.546165, -0.75, 149.5, 0.546165, 0, 149.5, 0.546165, -149.5, 0, 0.546165, 149.5, 0, 0.546165, 1.25, -0.75, 0.546165, 1, -149.5, 0.546165, 0, -149.5, 0.546165, 149.5, -0.75, 0.546165, 1, -0.75, 0.546165, 0, -149.5, 0.546165, 0, 0.75, 0.546165, 1, 0, 0.546165, 1.25, 0, 0.546165, 149.5, 149.5, 0.546165, 149.5, 149.5, 0.546165, 0, 149.5, 0.546165, 0, 0.75, 0.546165, 0, 0.75, 0.546165, 1)

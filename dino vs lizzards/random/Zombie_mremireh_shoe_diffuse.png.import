@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgk3bbfgu4gi4"
-path.s3tc="res://.godot/imported/Zombie_mremireh_shoe_normal.png-b41d77b8a6064eb1cefe346eeebeaf05.s3tc.ctex"
+uid="uid://cnluqy07r6xar"
+path.s3tc="res://.godot/imported/Zombie_mremireh_shoe_diffuse.png-b1b2f1493f1129da5888c7cc3ca7839b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "966bca27094c18fe3685024499f2a814"
+"md5": "aef153818c4765a38ddc11225a618239"
 }
 
 [deps]
 
-source_file="res://dino vs lizzards/Zombie_mremireh_shoe_normal.png"
-dest_files=["res://.godot/imported/Zombie_mremireh_shoe_normal.png-b41d77b8a6064eb1cefe346eeebeaf05.s3tc.ctex"]
+source_file="res://dino vs lizzards/random/Zombie_mremireh_shoe_diffuse.png"
+dest_files=["res://.godot/imported/Zombie_mremireh_shoe_diffuse.png-b1b2f1493f1129da5888c7cc3ca7839b.s3tc.ctex"]
 
 [params]
 
@@ -23,12 +23,12 @@ compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=1
+compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=1
-roughness/src_normal="res://dino vs lizzards/Zombie_mremireh_shoe_normal.png"
+roughness/mode=0
+roughness/src_normal=""
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

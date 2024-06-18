@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cl6olej4dom73"]
 
-[ext_resource type="Script" path="res://lv2.gd" id="1_fu47b"]
+[ext_resource type="Script" path="res://dino vs lizzards/random/lv2.gd" id="1_fu47b"]
 [ext_resource type="PackedScene" uid="uid://cq713w21uobj0" path="res://dino vs lizzards/game models/player.tscn" id="1_fyaap"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ilu5i"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cbl6gacvfg7il"]
 
-[ext_resource type="Script" path="res://levelsmenu.gd" id="1_i54lt"]
+[ext_resource type="Script" path="res://dino vs lizzards/random/levelsmenu.gd" id="1_i54lt"]
 [ext_resource type="Texture2D" uid="uid://d1aimi3ysoksb" path="res://dino vs lizzards/extra stuff/Untitled 06-11-2024 07-56-16.png" id="2_a2fgb"]
 
 [node name="levelsmenu" type="Control"]

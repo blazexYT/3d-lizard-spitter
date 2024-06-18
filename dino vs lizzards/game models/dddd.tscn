@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://dormio0dnyvsg"]
 
-[ext_resource type="Script" path="res://NavigationRegion3D.gd" id="1_cxjov"]
+[ext_resource type="Script" path="res://dino vs lizzards/random/NavigationRegion3D.gd" id="1_cxjov"]
 [ext_resource type="PackedScene" uid="uid://cq713w21uobj0" path="res://dino vs lizzards/game models/player.tscn" id="2_y1udg"]
 [ext_resource type="AudioStream" uid="uid://b63y3gr04e0qf" path="res://dino vs lizzards/sounds/endlessmotion.mp3" id="3_s7eid"]
 [ext_resource type="PackedScene" uid="uid://evgrfe41qw21" path="res://dino vs lizzards/game models/zombie.tscn" id="4_1s33a"]
