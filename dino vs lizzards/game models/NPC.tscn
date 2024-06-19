@@ -18,4 +18,6 @@ shape = SubResource("ConvexPolygonShape3D_m1gvp")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 path_desired_distance = 0.7
+path_max_distance = 21.91
+avoidance_enabled = true
 debug_enabled = true

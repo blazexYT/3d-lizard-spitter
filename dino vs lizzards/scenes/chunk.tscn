@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://c17qo0iocv0ql"]
+
+[ext_resource type="Script" path="res://dino vs lizzards/scenes/chunk.gd" id="1_6vyku"]
+
+[node name="chunk" type="MeshInstance3D"]
+script = ExtResource("1_6vyku")
+terrain_size = null
+resolution = null
+terrain_max_height = null
+xSize = null
+zSize = null
+terrian_height = null
+noise_offset = null
+update = null
+clear_vert_vis = null
+remove_collisions = null
+terrian_max_height = null

@@ -3,7 +3,7 @@ extends CharacterBody3D
 var SPEED = 3.0
 var health: float =  100.0
 
-var bullet = $Bullet
+#var bullet = $Bullet
 
 	
 	
@@ -41,6 +41,6 @@ func _apply_damage(damage: float) -> void:
 	
 
 
-func _on_area_3d_area_entered(area):
-	if area.name == bullet
-	queue_free()
+#func _on_area_3d_area_entered(area):
+	#if area.name == bullet:
+	#queue_free(bullet)

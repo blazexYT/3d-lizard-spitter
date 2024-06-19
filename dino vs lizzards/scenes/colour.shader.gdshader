@@ -1,6 +1,6 @@
 shader_type spatial;
 
-uniform sampler2D terrain_colour;
+uniform sampler2D colour_shader;
 
 uniform float min_height = 0;
 uniform float max_height = 1;
@@ -17,7 +17,7 @@ float inversLerp(float a, float b, float value){
 void fragment() {
 	float height = vertex_y;
 	float position = inversLerp(min_height,max_height,height);
-	vec3 colour = texture(terrain_colour,vec2(position,0)).rgb;
+	vec3 colour = texture(colour_shader,vec2(position,0)).rgb;
 	ALBEDO = colour;
 }
 void vertex(){
