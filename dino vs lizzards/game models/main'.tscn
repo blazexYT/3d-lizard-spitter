@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dckbjflsh2130"]
 
-[ext_resource type="PackedScene" uid="uid://cxxgcp52r5n3p" path="res://dino vs lizzards/game models/block.tscn" id="1_doh77"]
+[ext_resource type="PackedScene" uid="uid://cxxgcp52r5n3p" path="res://dino vs lizzards/block.tscn" id="1_doh77"]
 [ext_resource type="Script" path="res://dino vs lizzards/game models/main'.gd" id="1_nq76v"]
 [ext_resource type="PackedScene" uid="uid://cq713w21uobj0" path="res://dino vs lizzards/game models/player.tscn" id="2_fa7wn"]
 [ext_resource type="PackedScene" uid="uid://wpfv3fbphp2j" path="res://dino vs lizzards/game models/water.tscn" id="3_b0b8b"]

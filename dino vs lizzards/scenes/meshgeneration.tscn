@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://cl2nj7mwdovjt"]
+
+[ext_resource type="Texture2D" uid="uid://dqfxhywf7lcjl" path="res://2d game platformer/icon.svg" id="1_tvu11"]
+[ext_resource type="Script" path="res://dino vs lizzards/scenes/MeshInstance3D.gd" id="1_ug2s8"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1y8r3"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_v5m58"]
+sky_material = SubResource("ProceduralSkyMaterial_1y8r3")
+
+[sub_resource type="Environment" id="Environment_oriu5"]
+background_mode = 2
+sky = SubResource("Sky_v5m58")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_g1mq3"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1, 1.00001, 1),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 0, 0, 2, 0, 3, 0, 3, 0, 2, 0, 4, 0, 2, 0, 5, 0, 4, 0, 2, 0, 1, 0, 5, 0, 1, 0, 6, 0, 5, 0, 1, 0, 7, 0, 6, 0, 1, 0, 0, 0, 7, 0, 0, 0, 3, 0, 4, 0, 7, 0, 0, 0, 4, 0, 5, 0, 6, 0, 7, 0, 7, 0, 4, 0, 5, 0),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50, 51, 204, 204, 236, 68, 97, 167, 101, 230, 204, 204, 218, 182, 182, 173, 153, 153, 50, 179, 236, 68, 38, 182, 84, 85, 170, 170, 255, 127, 255, 159, 204, 76, 102, 102, 218, 182, 182, 173, 50, 179, 204, 76, 236, 68, 97, 167, 84, 213, 170, 42, 255, 127, 255, 159, 50, 51, 153, 25, 236, 68, 38, 182)
+}]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_freis"]
+albedo_texture = ExtResource("1_tvu11")
+
+[node name="meshgeneration" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.391226, -0.546174, 0.7407, 0.163592, 0.750759, 0.639998, -0.905638, 0.371557, -0.204367, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_oriu5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_g1mq3")
+surface_material_override/0 = SubResource("StandardMaterial3D_freis")
+script = ExtResource("1_ug2s8")
