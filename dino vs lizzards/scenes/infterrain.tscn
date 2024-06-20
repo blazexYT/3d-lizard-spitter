@@ -1,4 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://b04rurst66bch"]
+[gd_scene load_steps=7 format=3 uid="uid://b04rurst66bch"]
+
+[ext_resource type="Script" path="res://dino vs lizzards/scenes/infterrain.gd" id="1_d763y"]
+[ext_resource type="PackedScene" uid="uid://c17qo0iocv0ql" path="res://dino vs lizzards/scenes/chunk.tscn" id="2_nej8q"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_vhi1w"]
+noise_type = 3
+frequency = 0.008
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1ei8e"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -13,7 +20,14 @@ sky = SubResource("Sky_pvfv0")
 tonemap_mode = 2
 glow_enabled = true
 
-[node name="infanteterrain" type="Node3D"]
+[node name="infanteterrain" type="Node3D" node_paths=PackedStringArray("viewer")]
+script = ExtResource("1_d763y")
+ChunkSize = null
+terrain_height = null
+view_distance = null
+viewer = NodePath("Marker3D")
+chunk_mesh_scene = ExtResource("2_nej8q")
+noise = SubResource("FastNoiseLite_vhi1w")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)

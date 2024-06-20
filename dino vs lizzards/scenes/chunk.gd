@@ -21,7 +21,7 @@ const Center_OffSet = 0.5
 
 var set_collision = false
 
-func generate_terrain(noise:FastNoiseLite,coords:Vector2,size:float,initally_visible,bool):
+func generate_terrain(_noise:FastNoiseLite,coords:Vector2,size:float,initally_visible,bool):
 	var a_mesh:ArrayMesh
 	var surfTool = SurfaceTool.new()
 	var n = FastNoiseLite.new()
@@ -33,7 +33,7 @@ func generate_terrain(noise:FastNoiseLite,coords:Vector2,size:float,initally_vis
 			var percent = Vector2(x,z)/resolution
 			var pointOnMesh = Vector3((percent.x-cener_offset),0,(percent.y-cener_offset))
 			var vertex = pointOnMesh * terrain_size;
-			vertex.y = n.get_noise_2d(vertex.x*noise_offset,vertex.z*noise_offset) * terrain_max_height
+			vertex.y = n.get_noise_2d(position.x*noise_offset,position.z*noise_offset) * terrain_max_height
 			var uv = Vector2()
 			uv.x = percent.x
 			uv.y = percent.y
@@ -61,11 +61,32 @@ func generate_terrain(noise:FastNoiseLite,coords:Vector2,size:float,initally_vis
 	setchunkisvisible(initally_visible)
 
 
-func update_chunk(view_pos:Vector2,mix_view_dis):
+func update_chunk(view_pos:Vector2,max_view_dis):
 	var viewer_distance = position_cord.distance_to(view_pos)
 	var _is_visible = viewer_distance <= max_view_dis
-
-
+	setchunkisvisible(_is_visible)
+	
+func update_lod(view_pos:Vector2):
+	var viewer_distance = position_cord.distance_to(view_pos)
+	var update_terrain = false
+	var new_lod = 0
+	if viewer_distance > 1000:
+		new_lod = chunks_lods[0]
+	if viewer_distance <= 1000:
+		new_lod = chunks_lods[1]
+	if viewer_distance < 900:
+		new_lod = chunks_lods[2]
+	if viewer_distance < 500:
+		new_lod = chunks_lods[3]
+		set_collision = true
+		
+	if resolution != new_lod:
+		resolution = new_lod
+		update_terrain = true
+	return update_terrain
+	
+	
+	
 func setchunkisvisible(_is_visible):
 	visible = _is_visible
 

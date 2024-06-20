@@ -4,14 +4,3 @@
 
 [node name="chunk" type="MeshInstance3D"]
 script = ExtResource("1_6vyku")
-terrain_size = null
-resolution = null
-terrain_max_height = null
-xSize = null
-zSize = null
-terrian_height = null
-noise_offset = null
-update = null
-clear_vert_vis = null
-remove_collisions = null
-terrian_max_height = null
