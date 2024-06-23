@@ -31,7 +31,7 @@ size = Vector3(0.04, 0.04, 0.04)
 [node name="Bullet" type="Node3D"]
 script = ExtResource("1_2tqq2")
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Area3D" type="Area3D" parent="." groups=["enimess"]]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
 mesh = SubResource("BoxMesh_2a4ms")
@@ -43,6 +43,7 @@ shape = SubResource("ConvexPolygonShape3D_qj5w7")
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
 target_position = Vector3(0, 0, -0.6)
+collide_with_areas = true
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.49193)

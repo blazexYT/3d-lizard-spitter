@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=3 uid="uid://57onawratuty"]
+
+[ext_resource type="Script" path="res://CharacterBody3D.gd" id="1_31iia"]
+[ext_resource type="Shader" path="res://clipchamp.gdshader" id="2_lpi2c"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qu5hf"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_wsv67"]
+sky_material = SubResource("ProceduralSkyMaterial_qu5hf")
+
+[sub_resource type="Environment" id="Environment_73q5v"]
+background_mode = 2
+sky = SubResource("Sky_wsv67")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ji2xk"]
+render_priority = 0
+shader = ExtResource("2_lpi2c")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_f34gq"]
+size = Vector2(32, 32)
+subdivide_width = 31
+subdivide_depth = 31
+
+[node name="world?" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_73q5v")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+script = ExtResource("1_31iia")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("ShaderMaterial_ji2xk")
+mesh = SubResource("PlaneMesh_f34gq")

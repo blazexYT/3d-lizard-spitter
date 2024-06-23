@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://daft3ofgcwqyv"]
+[gd_scene load_steps=5 format=3 uid="uid://daft3ofgcwqyv"]
 
 [ext_resource type="Script" path="res://dino vs lizzards/game models/NPC.gd" id="1_15xus"]
+[ext_resource type="Script" path="res://dino vs lizzards/game models/Area3D.gd" id="2_ffhpv"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_hably"]
 
@@ -10,11 +11,20 @@ points = PackedVector3Array(-0.125207, -0.532801, -0.480507, 0.0227831, 0.47607,
 [node name="NPC" type="CharacterBody3D"]
 script = ExtResource("1_15xus")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("CapsuleMesh_hably")
+[node name="Area3D" type="Area3D" parent="."]
+script = ExtResource("2_ffhpv")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0117733, 0.00360852, -0.00359595)
+mesh = SubResource("CapsuleMesh_hably")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("ConvexPolygonShape3D_m1gvp")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 path_desired_distance = 0.7

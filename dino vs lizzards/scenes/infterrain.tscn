@@ -25,9 +25,9 @@ script = ExtResource("1_d763y")
 ChunkSize = null
 terrain_height = null
 view_distance = null
-viewer = NodePath("Marker3D")
 chunk_mesh_scene = ExtResource("2_nej8q")
 noise = SubResource("FastNoiseLite_vhi1w")
+viewer = NodePath("Marker3D")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)

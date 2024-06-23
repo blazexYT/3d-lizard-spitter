@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c5eueesxs7em3"
+path="res://.godot/imported/human_male.obj-a820c5d2d4b9c7c6a4225b0598874a2e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/human_male.obj-a820c5d2d4b9c7c6a4225b0598874a2e.mesh"]
+
+source_file="res://Godot-MTerrain-plugin-master/gui/human_male.obj"
+dest_files=["res://.godot/imported/human_male.obj-a820c5d2d4b9c7c6a4225b0598874a2e.mesh", "res://.godot/imported/human_male.obj-a820c5d2d4b9c7c6a4225b0598874a2e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

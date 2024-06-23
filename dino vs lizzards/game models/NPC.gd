@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
-
+var health = 6 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept"):
 		var random_position := Vector3.ZERO
@@ -16,3 +16,10 @@ func _physics_process(delta: float) -> void:
 	
 	velocity = direction * 5.0 
 	move_and_slide()
+
+
+func _on_area_3d_body_part_hit(dam):
+	health -= dam
+	if health <= 0:
+		queue_free()
+	
