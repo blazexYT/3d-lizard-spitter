@@ -17,7 +17,7 @@ transform = Transform3D(0.999414, 0.0342367, 0, -0.0342367, 0.999414, 0, 0, 0, 1
 script = ExtResource("1_jbg3n")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.999414, -0.0342367, 0, 0.0342367, 0.999414, 0, 0, 0, 1, 0.0711291, 0.00243665, 0)
+transform = Transform3D(0.999414, -0.0342367, 0, 0.0342367, 0.999414, 0, 0, 0, 1, 0.418809, 0.014347, -4.75145)
 material_override = SubResource("ShaderMaterial_ji2xk")
 mesh = SubResource("PlaneMesh_f34gq")
 skeleton = NodePath("../..")

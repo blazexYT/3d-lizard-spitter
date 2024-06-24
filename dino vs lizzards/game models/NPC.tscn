@@ -31,3 +31,8 @@ path_desired_distance = 0.7
 path_max_distance = 21.91
 avoidance_enabled = true
 debug_enabled = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." groups=["enimess"]]
+shape = SubResource("ConvexPolygonShape3D_m1gvp")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]

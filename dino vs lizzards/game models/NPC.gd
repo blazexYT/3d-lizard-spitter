@@ -20,6 +20,20 @@ func _physics_process(delta: float) -> void:
 
 func _on_area_3d_body_part_hit(dam):
 	health -= dam
+	print("health "+ health)
 	if health <= 0:
 		queue_free()
 	
+func hit():
+	health -= 1
+	print("health "+ health)
+	if health <= 0:
+		queue_free()
+
+func _on_area_3d_area_entered(area):
+	print(area)
+	if area.name.contains("Bullet"):
+		health -= area.dam
+		print("health "+ health)
+		if health <= 0:
+			queue_free()

@@ -28,17 +28,14 @@ initial_velocity_max = 5.0
 [sub_resource type="BoxMesh" id="BoxMesh_6mxlq"]
 size = Vector3(0.04, 0.04, 0.04)
 
-[node name="Bullet" type="Node3D"]
+[node name="Bullet" type="Area3D"]
 script = ExtResource("1_2tqq2")
 
-[node name="Area3D" type="Area3D" parent="." groups=["enimess"]]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_2a4ms")
-skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_tfxqe")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("ConvexPolygonShape3D_qj5w7")
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
@@ -59,4 +56,5 @@ wait_time = 10.0
 one_shot = true
 autostart = true
 
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
