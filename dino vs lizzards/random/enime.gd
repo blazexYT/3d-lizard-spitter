@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-var SPEED = 3.0
+var SPEED = 10
 var health = 6
 #var bullet = $Bullet
 

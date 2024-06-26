@@ -96,3 +96,4 @@ func create_collisions():
 		for i in get_children():
 			i.free
 	create_trimesh_collision() 
+
