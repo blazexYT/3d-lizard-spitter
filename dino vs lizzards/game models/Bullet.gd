@@ -18,12 +18,10 @@ func _process(delta):
 	#bullet movement
 	position += transform.basis * Vector3(0, 0, -SPEED) * delta
 	if ray.is_colliding():
-		print(ray.get_collider())
 		mesh.visible = false
 		particles.emitting = true
 		ray.enabled = false
-		if ray.get_collider().is_in_group("enimess"):
-			print(ray.get_collider())
+		if ray.get_collider().is_in_group("enime"):
 			ray.get_collider().hit()
 		await  get_tree().create_timer(1.0).timeout
 		queue_free()

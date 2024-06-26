@@ -1,8 +1,7 @@
 extends CharacterBody3D
 
 var SPEED = 3.0
-var health: float =  100.0
-
+var health = 6
 #var bullet = $Bullet
 
 	
@@ -23,7 +22,7 @@ func update_target_location(target_location):
 
 
 func _on_navigation_agent_3d_target_reached():
-	print("in range")
+	pass
 
 
 func _on_navigation_agent_3d_velocity_computed(safe_velocity):
@@ -37,9 +36,30 @@ func _on_child_entered_tree(_node):
 func _apply_damage(damage: float) -> void:
 	health -= damage
 	 	
+func _on_area_3d_body_part_hit(dam):
+	health -= dam
+	print("health "+ health)
+	if health <= 0:
+		queue_free()
+	
+func hit():
+	health -= 1
+	if health <= 0:
+		queue_free()
+
+func _on_area_3d_area_entered(area):
+	print(area)
+	if area.name.contains("Bullet"):
+		health -= area.dam
+		print("health "+ health)
+		if health <= 0:
+			queue_free()
 
 	
-
+func _on_area_3d_body_entered(body):
+	print(name)
+	if body.name == "player":
+		get_tree().change_scene_to_file("res://game_won.tscn")
 
 #func _on_area_3d_area_entered(area):
 	#if area.name == bullet:
