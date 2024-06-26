@@ -1,6 +1,6 @@
 extends Area3D
 
-const SPEED = 40.0 
+const SPEED = 20.0
 var dam = 1
 
 #onready

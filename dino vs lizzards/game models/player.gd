@@ -2,7 +2,7 @@ extends CharacterBody3D
 #evrything to do with portal!
 var portal_id = 0 
 const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
+const JUMP_VELOCITY = 10
 var mouseSensility = 300
 var mouse_relative_x = 0
 var mouse_relative_y = 0

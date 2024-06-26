@@ -26,4 +26,4 @@ transform = Transform3D(1, 0, 0, 0, 0.60423, 0, 0, 0, 1, 0, 0.415692, 0)
 current = true
 
 [node name="Rifle" parent="head/Camera3D" instance=ExtResource("2_1jkop")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.474456, -0.251255, -0.462814)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.600163, -0.313615, -0.342509)
