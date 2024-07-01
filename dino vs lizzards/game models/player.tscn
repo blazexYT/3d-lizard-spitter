@@ -1,9 +1,39 @@
-[gd_scene load_steps=5 format=3 uid="uid://cq713w21uobj0"]
+[gd_scene load_steps=12 format=3 uid="uid://cq713w21uobj0"]
 
 [ext_resource type="Script" path="res://dino vs lizzards/game models/player.gd" id="1_waf4y"]
 [ext_resource type="PackedScene" uid="uid://dvjwptwpvq2n" path="res://dino vs lizzards/game models/steampunk_rifle.tscn" id="2_1jkop"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_615l6"]
+
+[sub_resource type="Gradient" id="Gradient_kqwmd"]
+offsets = PackedFloat32Array(0, 0.106557, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.928281, 0.41862, 1.92523e-07, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_25yyh"]
+gradient = SubResource("Gradient_kqwmd")
+
+[sub_resource type="Gradient" id="Gradient_aq628"]
+offsets = PackedFloat32Array(0, 0.827869, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.606557, 0.606557, 0.606557, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_hmfno"]
+gradient = SubResource("Gradient_aq628")
+
+[sub_resource type="Gradient" id="Gradient_itseg"]
+offsets = PackedFloat32Array(0, 0.221311, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.754098, 0.754098, 0.754098, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rmpvf"]
+gradient = SubResource("Gradient_itseg")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_or0aa"]
+albedo_color = Color(0, 0.945098, 0.917647, 1)
+albedo_texture = SubResource("GradientTexture2D_25yyh")
+roughness_texture = SubResource("GradientTexture2D_rmpvf")
+emission_enabled = true
+emission = Color(0, 1, 1, 1)
+emission_energy_multiplier = 4.05
+emission_texture = SubResource("GradientTexture2D_hmfno")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qpqhm"]
 
@@ -14,6 +44,7 @@ script = ExtResource("1_waf4y")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("CapsuleMesh_615l6")
+surface_material_override/0 = SubResource("StandardMaterial3D_or0aa")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 0, 0)

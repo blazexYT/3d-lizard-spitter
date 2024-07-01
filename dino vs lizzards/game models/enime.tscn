@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://dp7h1hw7ti30q"]
+[gd_scene load_steps=4 format=3 uid="uid://dp7h1hw7ti30q"]
 
 [ext_resource type="Script" path="res://dino vs lizzards/random/enime.gd" id="1_cowcj"]
-[ext_resource type="PackedScene" uid="uid://d0xm7ok8eowa2" path="res://dino vs lizzards/game models/Bullet.tscn" id="2_spg1g"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_n7yko"]
 
@@ -22,9 +21,10 @@ path_desired_distance = 0.8
 target_desired_distance = 2.0
 path_height_offset = 0.1
 avoidance_enabled = true
+radius = 1.0
+max_neighbors = 15
+use_3d_avoidance = true
 debug_enabled = true
-
-[node name="Bullet" parent="." instance=ExtResource("2_spg1g")]
 
 [node name="Area3D" type="Area3D" parent="."]
 
