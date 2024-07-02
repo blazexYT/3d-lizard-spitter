@@ -1,9 +1,10 @@
 extends CharacterBody3D
 @onready var explosion = $explosion
 var SPEED = 10
-var health = 6
+var health = 1
 var player =  null
 @onready var particles = $MeshInstance3D2
+@onready var mesh = $MeshInstance3D
 #var bullet = $Bullet
 
 func _ready(): 
@@ -47,8 +48,9 @@ func _on_area_3d_body_part_hit(dam):
 	health -= dam
 	print("health "+ health)
 	if health <= 0:
-		explosion.visible = true 
-		particles.emitting = true
+		mesh.visible = false 
+		particles.emmiting = true 
+		await get_tree().create_timer(1.0).timeout
 		queue_free()
 	
 func hit():

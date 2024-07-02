@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ghscms8obvcf"]
+[gd_scene load_steps=8 format=3 uid="uid://ghscms8obvcf"]
 
 [ext_resource type="PackedScene" uid="uid://dp7h1hw7ti30q" path="res://dino vs lizzards/game models/enime.tscn" id="1_j2hmg"]
 [ext_resource type="PackedScene" uid="uid://3cuclw111os5" path="res://explosion/healthbar_3d.tscn" id="2_phy2f"]
@@ -19,6 +19,9 @@ glow_enabled = true
 [sub_resource type="ViewportTexture" id="ViewportTexture_xnndd"]
 viewport_path = NodePath("SubViewport")
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_5d7d0"]
+viewport_path = NodePath("SubViewport")
+
 [node name="enime" instance=ExtResource("1_j2hmg")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." index="0"]
@@ -28,13 +31,11 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="1"]
 environment = SubResource("Environment_32xkg")
 
-[node name="SubViewport" type="SubViewport" parent="." index="11"]
+[node name="SubViewport2" type="SubViewport" parent="." index="11"]
 disable_3d = true
 transparent_bg = true
 
-[node name="healthbar3d" parent="SubViewport" index="0" instance=ExtResource("2_phy2f")]
-
-[node name="Sprite3D" type="Sprite3D" parent="." index="12"]
+[node name="Sprite3D2" type="Sprite3D" parent="." index="12"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3026, 0)
 billboard = 1
 texture = SubResource("ViewportTexture_xnndd")
@@ -44,5 +45,10 @@ autostart = true
 
 [node name="Camera3D" type="Camera3D" parent="." index="14"]
 transform = Transform3D(1, 0, 0, 0, 0.984908, 0.173081, 0, -0.173081, 0.984908, 0.101191, 1.48998, 4.65086)
+
+[node name="healthbar3d2" parent="SubViewport" index="0" instance=ExtResource("2_phy2f")]
+
+[node name="Sprite3D" parent="." index="16"]
+texture = SubResource("ViewportTexture_5d7d0")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -46,16 +46,20 @@ shape = SubResource("ConvexPolygonShape3D_tm7oi")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 path_desired_distance = 0.8
-target_desired_distance = 2.0
 path_height_offset = 0.1
 avoidance_enabled = true
-radius = 1.0
-max_neighbors = 15
+radius = 1.5
+max_neighbors = 21
+time_horizon_obstacles = 1.0
 use_3d_avoidance = true
+debug_enabled = true
+debug_use_custom = true
+debug_path_custom_color = Color(0, 1, 1, 1)
 
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="explosion" parent="." instance=ExtResource("2_hdrxm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00436276, 0)
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19465, 0.711908, 0.500111)
