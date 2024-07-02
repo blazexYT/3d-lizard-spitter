@@ -15,7 +15,7 @@ sky = SubResource("Sky_v5m58")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_2hc8v"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_627mr"]
 _surfaces = [{
 "aabb": AABB(0, 0, 0, 1, 1.00001, 1),
 "attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
@@ -38,5 +38,5 @@ shadow_enabled = true
 environment = SubResource("Environment_oriu5")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("ArrayMesh_2hc8v")
+mesh = SubResource("ArrayMesh_627mr")
 script = ExtResource("1_ug2s8")

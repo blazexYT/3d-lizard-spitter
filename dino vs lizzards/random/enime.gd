@@ -1,9 +1,16 @@
 extends CharacterBody3D
-
+@onready var explosion = $explosion
 var SPEED = 10
 var health = 6
+var player =  null
+@onready var particles = $MeshInstance3D2
 #var bullet = $Bullet
 
+func _ready(): 
+	explosion.visible = false 
+	
+	
+	
 	
 	
 func _physics_process(_delta):
@@ -40,6 +47,8 @@ func _on_area_3d_body_part_hit(dam):
 	health -= dam
 	print("health "+ health)
 	if health <= 0:
+		explosion.visible = true 
+		particles.emitting = true
 		queue_free()
 	
 func hit():
@@ -53,6 +62,10 @@ func _on_area_3d_area_entered(area):
 		health -= area.dam
 		print("health "+ health)
 		if health <= 0:
+			explosion = true 
+			if $SubViewport/healthbar3d.value < health:
+				health = $SubViewport/healthbar3d.value
+			$SubViewport/healthbar3d.value -= health
 			queue_free()
 
 	
@@ -64,3 +77,10 @@ func _on_area_3d_area_entered(area):
 #func _on_area_3d_area_entered(area):
 	#if area.name == bullet:
 	#queue_free(bullet)
+func take_damage(damage):
+	if $SubViewport/healthbar3d.value < damage:
+		damage = $SubViewport/healthbar3d.value
+	$SubViewport/healthbar3d.value -= damage
+
+func _on_timer_timeout():
+	take_damage(5)

@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dr6kgg7dyndo1"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_eog0v"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6mtuy"]
+
+[node name="sign" type="MeshInstance3D"]
+transform = Transform3D(0.30626, -0.198569, -8.67972e-09, -5.5889e-16, -1.59547e-08, 0.365, -0.198569, -0.30626, -1.33871e-08, 0, 0.285666, 0)
+mesh = SubResource("PlaneMesh_eog0v")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.02, 0, 2.06637e-09, -9.31323e-10, 2.63, -3.25963e-09, -3.82897e-10, 4.47035e-08, 0.175, 0.0364609, -0.0518684, -1.13568)
+mesh = SubResource("PlaneMesh_6mtuy")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(-1.37931, -2.92108e-15, 1.78814e-07, 1.78814e-07, -6.02916e-08, 1.37931, -2.84217e-14, 1.37931, 6.02914e-08, 0.00515666, 0.0513652, -0.00978959)
+pixel_size = 0.0041
+modulate = Color(0, 1, 1, 1)
+text = "now use the spacebar
+to jump use the 
+spacebar to get on 
+that block"
