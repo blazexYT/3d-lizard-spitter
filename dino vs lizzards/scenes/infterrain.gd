@@ -64,5 +64,5 @@ func updateVisibleChunk():
 				var pos = view_chunk_coord*chunkSize
 				var world_position = Vector3(pos.x,0,pos.y)
 				chunk.global_position = world_position
-				chunk.generate_terrain(noise,view_chunk_coord,chunkSize,false)
+				chunk.generate_terrain(noise,view_chunk_coord,chunkSize,false,0)
 				terrain_chunks[view_chunk_coord] = chunk

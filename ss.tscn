@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=3 uid="uid://c1lfsp86ulqh6"]
+
+[ext_resource type="PackedScene" uid="uid://cq713w21uobj0" path="res://dino vs lizzards/game models/player.tscn" id="1_e4egm"]
+
+[sub_resource type="Curve" id="Curve_8ry1b"]
+min_value = -50.0
+max_value = 10.0
+_data = [Vector2(0, 6.59341), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_wkbxo"]
+curve = SubResource("Curve_8ry1b")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_a23sn"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 1.0
+spread = 180.0
+gravity = Vector3(0, 10, 0)
+radial_accel_min = 20.0
+radial_accel_max = 25.0
+radial_accel_curve = SubResource("CurveTexture_wkbxo")
+tangential_accel_min = 100.0
+tangential_accel_max = 100.0
+damping_max = 0.88
+scale_min = 10.0
+scale_max = 10.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lracw"]
+albedo_color = Color(0, 1, 1, 1)
+emission_enabled = true
+emission = Color(0, 0, 1, 1)
+emission_energy_multiplier = 16.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_4yx1d"]
+material = SubResource("StandardMaterial3D_lracw")
+size = Vector3(2.635, 1, 1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1000, 0, 0, 0, 1000, 0, 0, 0, 1000, -0.0453925, 0.0927219, 0.0215998)
+amount = 1000000
+lifetime = 10.0
+explosiveness = 1.0
+randomness = 0.78
+fixed_fps = 120
+trail_lifetime = 10.0
+process_material = SubResource("ParticleProcessMaterial_a23sn")
+draw_pass_1 = SubResource("BoxMesh_4yx1d")
+
+[node name="player" parent="." instance=ExtResource("1_e4egm")]
+transform = Transform3D(1, 0, 0, 0, 1.655, 0, 0, 0, 1, 0, 1.43155, 0)
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Area3D"]
