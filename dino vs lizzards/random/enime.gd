@@ -1,7 +1,7 @@
 extends CharacterBody3D
 @onready var explosion = $explosion
 var SPEED = 10
-var health = 1
+var health = 6
 var player =  null
 @onready var particles = $MeshInstance3D2
 @onready var mesh = $MeshInstance3D
