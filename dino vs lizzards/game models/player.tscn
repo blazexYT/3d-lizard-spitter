@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://cq713w21uobj0"]
+[gd_scene load_steps=13 format=3 uid="uid://cq713w21uobj0"]
 
 [ext_resource type="Script" path="res://dino vs lizzards/game models/player.gd" id="1_waf4y"]
 [ext_resource type="PackedScene" uid="uid://dvjwptwpvq2n" path="res://dino vs lizzards/game models/steampunk_rifle.tscn" id="2_1jkop"]
+[ext_resource type="Script" path="res://dino vs lizzards/game models/Reticle.gd" id="3_m5spi"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_615l6"]
 
@@ -58,3 +59,25 @@ current = true
 
 [node name="Rifle" parent="head/Camera3D" instance=ExtResource("2_1jkop")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.600163, -0.313615, -0.342509)
+
+[node name="userinterface" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Reticle" type="CenterContainer" parent="userinterface"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_m5spi")
+
+[node name="Line2D" type="Line2D" parent="userinterface/Reticle"]
+points = PackedVector2Array(0, 0)
+default_color = Color(0, 0, 0, 1)
