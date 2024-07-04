@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://clgpcdnpi82eq"]
+
+[ext_resource type="PackedScene" uid="uid://3cuclw111os5" path="res://explosion/healthbar_3d.tscn" id="1_3ynp8"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_jh37i"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Sprite3D" type="Sprite3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000596046, 1.67822, -0.00443935)
+billboard = 1
+texture = SubResource("ViewportTexture_jh37i")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+disable_3d = true
+transparent_bg = true
+
+[node name="healthbar3d" parent="SubViewport" instance=ExtResource("1_3ynp8")]

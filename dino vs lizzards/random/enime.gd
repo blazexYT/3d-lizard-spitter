@@ -14,7 +14,7 @@ func _ready():
 	
 	
 	
-func _physics_process(_delta):
+func _physics_process(_delta: float) -> void:
 	var current_location = global_transform.origin
 	var next_location = nav_agent.get_next_path_position()
 	var new_velocity = (next_location - current_location).normalized() * SPEED 
@@ -79,10 +79,4 @@ func _on_area_3d_area_entered(area):
 #func _on_area_3d_area_entered(area):
 	#if area.name == bullet:
 	#queue_free(bullet)
-func take_damage(damage):
-	if $SubViewport/healthbar3d.value < damage:
-		damage = $SubViewport/healthbar3d.value
-	$SubViewport/healthbar3d.value -= damage
-
-func _on_timer_timeout():
-	take_damage(5)
+	

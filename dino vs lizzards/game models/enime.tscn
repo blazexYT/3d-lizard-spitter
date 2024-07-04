@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://dino vs lizzards/random/enime.gd" id="1_cowcj"]
 [ext_resource type="PackedScene" uid="uid://drks05lqchk6i" path="res://explosion/explosion.tscn" id="2_hdrxm"]
-[ext_resource type="PackedScene" uid="uid://3cuclw111os5" path="res://explosion/healthbar_3d.tscn" id="3_j3fwj"]
+[ext_resource type="PackedScene" uid="uid://clgpcdnpi82eq" path="res://health.tscn" id="3_uwwfn"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_jmpnk"]
 radius = 0.1
@@ -24,7 +24,7 @@ material = SubResource("StandardMaterial3D_o6l11")
 radius = 0.09
 height = 0.2
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_jh37i"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_xin7m"]
 viewport_path = NodePath("SubViewport")
 
 [node name="enime" type="CharacterBody3D" groups=["enime"]]
@@ -69,16 +69,9 @@ mesh = SubResource("SphereMesh_5bd4l")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.197357, 0.711908, 0.500111)
 mesh = SubResource("SphereMesh_5bd4l")
 
-[node name="SubViewport" type="SubViewport" parent="."]
-disable_3d = true
-transparent_bg = true
-
-[node name="healthbar3d" parent="SubViewport" instance=ExtResource("3_j3fwj")]
-
-[node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000596046, 1.67822, -0.00443935)
-billboard = 1
-texture = SubResource("ViewportTexture_jh37i")
+[node name="Sprite3D" parent="." instance=ExtResource("3_uwwfn")]
+texture = SubResource("ViewportTexture_xin7m")
+script = null
 
 [connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
 [connection signal="target_reached" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_target_reached"]
