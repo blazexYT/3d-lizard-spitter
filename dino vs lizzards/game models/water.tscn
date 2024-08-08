@@ -73,9 +73,6 @@ mesh = SubResource("PlaneMesh_egort")
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.0421372, 0.999112, 0, -0.999112, -0.0421372, 1, 48.722, -1)
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.126417, -2.9974)
-
 [node name="Area3D" type="Area3D" parent="."]
 transform = Transform3D(150, 0, 0, 0, 50, 0, 0, 0, 150, 0, 0, 0)
 
@@ -87,7 +84,7 @@ shape = SubResource("BoxShape3D_4owit")
 physics_material_override = SubResource("PhysicsMaterial_02m1u")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0313995, -12.101, 0.00479746)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0313995, -5.20627, 0.00479746)
 material_override = SubResource("StandardMaterial3D_y13wc")
 mesh = SubResource("PlaneMesh_eug3o")
 skeleton = NodePath("../..")
