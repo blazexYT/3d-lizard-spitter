@@ -32,16 +32,16 @@ noise = SubResource("FastNoiseLite_qyb0j")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5l0hg"]
 render_priority = 0
 shader = ExtResource("1_h65te")
-shader_parameter/water_colour = Color(0.0470588, 0.141176, 0.176471, 1)
+shader_parameter/water_colour = Color(0.0470588, 0.141176, 0, 1)
 shader_parameter/uv_scale = 2.0
 shader_parameter/time_scale = 1.25
 shader_parameter/normal = 1.0
 shader_parameter/roughness = 0.25
-shader_parameter/color_ratio = 0.3
+shader_parameter/color_ratio = 0.5
 shader_parameter/abberation_r = Vector2(0, 0.008)
 shader_parameter/abberation_g = Vector2(0, 0.004)
 shader_parameter/abberation_b = Vector2(0.009, 0)
-shader_parameter/highlights_time_scale = 0.037
+shader_parameter/highlights_time_scale = 0.122
 shader_parameter/water_normal_noise = SubResource("NoiseTexture2D_4mntf")
 shader_parameter/sun_highlights = SubResource("NoiseTexture2D_5a2wj")
 
@@ -69,9 +69,6 @@ transform = Transform3D(1, 0, 0, 0, 2.24, 0, 0, 0, 1, -0.00696826, -0.0134935, 0
 material_override = SubResource("ShaderMaterial_5l0hg")
 lod_bias = 0.001
 mesh = SubResource("PlaneMesh_egort")
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.0421372, 0.999112, 0, -0.999112, -0.0421372, 1, 48.722, -1)
 
 [node name="Area3D" type="Area3D" parent="."]
 transform = Transform3D(150, 0, 0, 0, 50, 0, 0, 0, 150, 0, 0, 0)
