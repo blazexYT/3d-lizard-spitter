@@ -71,7 +71,6 @@ mesh = SubResource("SphereMesh_5bd4l")
 
 [node name="Sprite3D" parent="." instance=ExtResource("3_uwwfn")]
 texture = SubResource("ViewportTexture_xin7m")
-script = null
 
 [connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
 [connection signal="target_reached" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_target_reached"]
