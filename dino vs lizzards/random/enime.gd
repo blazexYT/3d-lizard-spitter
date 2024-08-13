@@ -19,7 +19,7 @@ func _physics_process(_delta: float) -> void:
 	var next_location = nav_agent.get_next_path_position()
 	var new_velocity = (next_location - current_location).normalized() * SPEED
 	$Sprite3D/SubViewport/healthbar3d.value = health
-	print(health) 
+	
 	
 	nav_agent.set_velocity(new_velocity)
 	
