@@ -16,7 +16,7 @@ const cener_offset := 0.5
 @export var create_collisions = false
 @export var remove_collisions = false
 var min_height = 0
-var max_height = 1 	
+var max_height = 1 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	generate_terrain()
