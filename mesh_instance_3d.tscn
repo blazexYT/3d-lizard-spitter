@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://c6bnp81vf8532"]
+[gd_scene load_steps=10 format=3 uid="uid://c6bnp81vf8532"]
 
 [ext_resource type="Texture2D" uid="uid://chex7w4qpw210" path="res://thing/aerial_rocks_01_diff_4k.png" id="1_x170h"]
 [ext_resource type="Texture2D" uid="uid://dibhhrtb7do4v" path="res://thing/aerial_rocks_01_rough_4k.png" id="2_cuf5o"]
 [ext_resource type="Script" path="res://terraingen.gd" id="3_ld7ww"]
+[ext_resource type="PackedScene" uid="uid://wpfv3fbphp2j" path="res://dino vs lizzards/game models/water.tscn" id="4_e7bo5"]
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_vwvsp"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_swors"]
 _surfaces = [{
 "aabb": AABB(-200, -40.1864, -200, 400, 90.5549, 400),
 "attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 37, 73, 18, 62, 0, 0, 0, 0, 0, 0, 0, 0, 37, 73, 18, 62, 37, 73, 18, 62, 37, 73, 18, 62, 37, 73, 146, 62, 0, 0, 0, 0, 37, 73, 146, 62, 37, 73, 18, 62, 183, 109, 219, 62, 0, 0, 0, 0, 183, 109, 219, 62, 37, 73, 18, 62, 37, 73, 18, 63, 0, 0, 0, 0, 37, 73, 18, 63, 37, 73, 18, 62, 110, 219, 54, 63, 0, 0, 0, 0, 110, 219, 54, 63, 37, 73, 18, 62, 183, 109, 91, 63, 0, 0, 0, 0, 183, 109, 91, 63, 37, 73, 18, 62, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 37, 73, 18, 62, 0, 0, 0, 0, 37, 73, 146, 62, 37, 73, 18, 62, 37, 73, 146, 62, 37, 73, 146, 62, 37, 73, 146, 62, 183, 109, 219, 62, 37, 73, 146, 62, 37, 73, 18, 63, 37, 73, 146, 62, 110, 219, 54, 63, 37, 73, 146, 62, 183, 109, 91, 63, 37, 73, 146, 62, 0, 0, 128, 63, 37, 73, 146, 62, 0, 0, 0, 0, 183, 109, 219, 62, 37, 73, 18, 62, 183, 109, 219, 62, 37, 73, 146, 62, 183, 109, 219, 62, 183, 109, 219, 62, 183, 109, 219, 62, 37, 73, 18, 63, 183, 109, 219, 62, 110, 219, 54, 63, 183, 109, 219, 62, 183, 109, 91, 63, 183, 109, 219, 62, 0, 0, 128, 63, 183, 109, 219, 62, 0, 0, 0, 0, 37, 73, 18, 63, 37, 73, 18, 62, 37, 73, 18, 63, 37, 73, 146, 62, 37, 73, 18, 63, 183, 109, 219, 62, 37, 73, 18, 63, 37, 73, 18, 63, 37, 73, 18, 63, 110, 219, 54, 63, 37, 73, 18, 63, 183, 109, 91, 63, 37, 73, 18, 63, 0, 0, 128, 63, 37, 73, 18, 63, 0, 0, 0, 0, 110, 219, 54, 63, 37, 73, 18, 62, 110, 219, 54, 63, 37, 73, 146, 62, 110, 219, 54, 63, 183, 109, 219, 62, 110, 219, 54, 63, 37, 73, 18, 63, 110, 219, 54, 63, 110, 219, 54, 63, 110, 219, 54, 63, 183, 109, 91, 63, 110, 219, 54, 63, 0, 0, 128, 63, 110, 219, 54, 63, 0, 0, 0, 0, 183, 109, 91, 63, 37, 73, 18, 62, 183, 109, 91, 63, 37, 73, 146, 62, 183, 109, 91, 63, 183, 109, 219, 62, 183, 109, 91, 63, 37, 73, 18, 63, 183, 109, 91, 63, 110, 219, 54, 63, 183, 109, 91, 63, 183, 109, 91, 63, 183, 109, 91, 63, 0, 0, 128, 63, 183, 109, 91, 63, 0, 0, 0, 0, 0, 0, 128, 63, 37, 73, 18, 62, 0, 0, 128, 63, 37, 73, 146, 62, 0, 0, 128, 63, 183, 109, 219, 62, 0, 0, 128, 63, 37, 73, 18, 63, 0, 0, 128, 63, 110, 219, 54, 63, 0, 0, 128, 63, 183, 109, 91, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63),
@@ -30,9 +31,22 @@ uv1_scale = Vector3(20, 20, 20)
 grow = true
 grow_amount = 16.0
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rvojx"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_nlw2j"]
+sky_material = SubResource("ProceduralSkyMaterial_rvojx")
+
+[sub_resource type="Environment" id="Environment_2oywj"]
+background_mode = 2
+sky = SubResource("Sky_nlw2j")
+tonemap_mode = 2
+glow_enabled = true
+
 [node name="good textured game lv" type="MeshInstance3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.294, 0)
-mesh = SubResource("ArrayMesh_vwvsp")
+mesh = SubResource("ArrayMesh_swors")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_a2ati")
 script = ExtResource("3_ld7ww")
@@ -44,6 +58,48 @@ zSize = 110
 terrian_height = 65
 noise_offset = 1.035
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_2oywj")
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, -1.52704, 24.4716, -0.0553493)
 shadow_enabled = true
+
+[node name="water" parent="." instance=ExtResource("4_e7bo5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.8705, 3.95414, 77.4449)
+
+[node name="water4" parent="." instance=ExtResource("4_e7bo5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 164.686, 3.95414, 77.4449)
+
+[node name="water5" parent="." instance=ExtResource("4_e7bo5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 164.686, 3.95414, 144.025)
+
+[node name="water6" parent="." instance=ExtResource("4_e7bo5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 164.686, 13.7205, -31.3475)
+
+[node name="water11" parent="." instance=ExtResource("4_e7bo5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115.677, 13.7205, -31.3475)
+
+[node name="water12" parent="." instance=ExtResource("4_e7bo5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108.861, 15.4358, -23.3028)
+
+[node name="water10" parent="." instance=ExtResource("4_e7bo5")]
+transform = Transform3D(0.7, 0, 0, 0, 1.91548, -0.0456871, 0, 0.191191, 0.457726, 134.495, 12.2772, 23.8245)
+
+[node name="water13" parent="." instance=ExtResource("4_e7bo5")]
+transform = Transform3D(0.7, 0, 0, 0, 1.79936, -0.163462, 0, 0.684052, 0.429977, 182.842, 11.2089, 19.2617)
+
+[node name="water7" parent="." instance=ExtResource("4_e7bo5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 145.33, 14.1206, -126.643)
+
+[node name="water8" parent="." instance=ExtResource("4_e7bo5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 107.526, 14.1206, -150.376)
+
+[node name="water9" parent="." instance=ExtResource("4_e7bo5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 147.674, 14.1206, -150.376)
+
+[node name="water2" parent="." instance=ExtResource("4_e7bo5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.7266, 3.95414, 77.4449)
+
+[node name="water3" parent="." instance=ExtResource("4_e7bo5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.0132, 3.95414, 155.569)
