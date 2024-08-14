@@ -21,6 +21,7 @@ func _physics_process(_delta: float) -> void:
 	$Sprite3D/SubViewport/healthbar3d.value = health
 	
 	
+	
 	nav_agent.set_velocity(new_velocity)
 	
 	
@@ -65,7 +66,7 @@ func _on_area_3d_area_entered(area):
 	if area.name.contains("Bullet"):
 		health -= area.dam
 		print("health "+ health)
-		if health <= 0:
+		if health <= -1:
 			explosion = true 
 			if $SubViewport/healthbar3d.value < health:
 				health = $SubViewport/healthbar3d.value
