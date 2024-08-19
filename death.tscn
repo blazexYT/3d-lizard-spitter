@@ -1,7 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://i5mkmvspx5yx"]
+[gd_scene load_steps=3 format=3 uid="uid://i5mkmvspx5yx"]
 
-[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_qr8ls"]
-file = "0818.ogg"
+[ext_resource type="VideoStream" path="res://thing/0818.ogv" id="1_64t2s"]
+[ext_resource type="Script" path="res://VideoStreamPlayer.gd" id="2_8qubl"]
 
 [node name="death" type="Control"]
 layout_mode = 3
@@ -19,12 +19,24 @@ offset_bottom = 656.0
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
-layout_mode = 0
-offset_right = 1158.0
-offset_bottom = 650.0
-stream = SubResource("VideoStreamTheora_qr8ls")
-autoplay = true
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(573, 328)
+zoom = Vector2(0.31, 0.32)
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Camera2D"]
+offset_left = -1868.0
+offset_top = -1025.0
+offset_right = 1844.0
+offset_bottom = 1135.0
+scale = Vector2(1, 0.96)
+stream = ExtResource("1_64t2s")
+autoplay = true
+expand = true
+script = ExtResource("2_8qubl")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 6.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="Camera2D/VideoStreamPlayer" method="_on_timer_timeout"]

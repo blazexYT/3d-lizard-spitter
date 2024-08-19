@@ -11,6 +11,7 @@ var jump_count = 0
 # bullets 
 var bullet = load("res://dino vs lizzards/game models/Bullet.tscn")
 var instance
+var health = 100
 
 #onready
 @onready var gun_anim = $head/Camera3D/Rifle/AnimationPlayer
@@ -48,13 +49,13 @@ func _physics_process(delta):
 		if !gun_anim.is_playing():
 			gun_anim.play("Shoot")
 			instance = bullet.instantiate()
-			instance.global_position = gun_barrel.global_position
-			instance.global_transform.basis = gun_barrel.global_transform.basis
+			instance.position = gun_barrel.global_position
+			instance.transform.basis = gun_barrel.global_transform.basis
 			get_parent().add_child(instance)
 
 	move_and_slide()
 	if position.y <-10:
-		get_tree().change_scene_to_file("res://die.tscn")
+		get_tree().change_scene_to_file("res://death.tscn")
 
 
 
