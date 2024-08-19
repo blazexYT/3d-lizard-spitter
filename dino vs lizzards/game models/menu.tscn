@@ -39,24 +39,25 @@ grow_vertical = 2
 [node name="start button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 focus_neighbor_top = NodePath("../quit button")
-text = "𝕤𝕥𝕒𝕣𝕥"
+text = "start"
 flat = true
 
 [node name="levels button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "𝕝𝕖𝕧𝕝𝕖𝕤 :)"
+text = "levels :)"
 flat = true
 
 [node name="options button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "𝕠𝕡𝕥𝕚𝕠𝕟𝕤
+text = "options 
 "
 flat = true
 
 [node name="quit button" type="Button" parent="VBoxContainer"]
+visible = false
 layout_mode = 2
 focus_neighbor_bottom = NodePath("../start button")
-text = "𝕢𝕦𝕚𝕥"
+text = "quit "
 flat = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

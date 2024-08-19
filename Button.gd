@@ -1,9 +1,9 @@
-extends VideoStreamPlayer
+extends Button
 
-
+@onready var Buttoon = $"."
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	Buttoon.visible = false 
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -12,4 +12,4 @@ func _process(_delta):
 
 
 func _on_timer_timeout():
-	paused = !paused
+	Buttoon.visible = true 
