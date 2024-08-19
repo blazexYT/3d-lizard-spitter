@@ -33,6 +33,10 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="2"]
 environment = SubResource("Environment_32xkg")
 
+[node name="NavigationAgent3D" parent="." index="7"]
+path_desired_distance = 0.1
+target_desired_distance = 0.1
+
 [node name="SubViewport2" type="SubViewport" parent="." index="12"]
 disable_3d = true
 transparent_bg = true
