@@ -1,0 +1,96 @@
+[gd_scene load_steps=18 format=3 uid="uid://dgjw4bhmlwdxi"]
+
+[ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_l3rsm"]
+[ext_resource type="Resource" path="res://Godot-MTerrain-plugin-master/terrainss/data.hterrain" id="2_2bt0b"]
+[ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_ji7et"]
+[ext_resource type="Texture2D" uid="uid://chex7w4qpw210" path="res://thing/aerial_rocks_01_diff_4k.png" id="4_ntx8t"]
+[ext_resource type="Texture2D" uid="uid://dydc8kd4oy442" path="res://dino vs lizzards/game models/terrain_slot0_albedo_bump.png" id="4_x2ytj"]
+[ext_resource type="Texture2D" uid="uid://dibhhrtb7do4v" path="res://thing/aerial_rocks_01_rough_4k.png" id="5_llykx"]
+[ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_detail_layer.gd" id="6_b8p7b"]
+[ext_resource type="Texture2D" uid="uid://gfiu3oe1yytm" path="res://dino vs lizzards/game models/terrain_slot0_normal_roughness.png" id="6_k274e"]
+[ext_resource type="Texture2D" uid="uid://6jmdwj3vn6m0" path="res://addons/zylann.hterrain/tools/icons/icon_detail_layer_node.svg" id="7_2naih"]
+[ext_resource type="Texture2D" uid="uid://duaafmcfwm7f4" path="res://dino vs lizzards/extra stuff/grass.jpg" id="7_qarmc"]
+[ext_resource type="PackedScene" uid="uid://cq713w21uobj0" path="res://dino vs lizzards/game models/player.tscn" id="8_sfsgw"]
+[ext_resource type="PackedScene" uid="uid://wpfv3fbphp2j" path="res://dino vs lizzards/game models/water.tscn" id="9_khy03"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xkfqf"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_40njb"]
+sky_material = SubResource("ProceduralSkyMaterial_xkfqf")
+
+[sub_resource type="Environment" id="Environment_f6vdt"]
+background_mode = 2
+sky = SubResource("Sky_40njb")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="Resource" id="Resource_5fanw"]
+script = ExtResource("3_ji7et")
+mode = 0
+textures = [[ExtResource("4_x2ytj"), ExtResource("4_ntx8t"), null, null], [ExtResource("6_k274e"), ExtResource("5_llykx"), null, null]]
+
+[sub_resource type="PrismMesh" id="PrismMesh_ipy5m"]
+size = Vector3(0.1, 0.775, 0.1)
+
+[node name="terrain" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_f6vdt")
+
+[node name="HTerrain" type="Node3D" parent="."]
+script = ExtResource("1_l3rsm")
+map_scale = Vector3(10, 1, 10)
+_terrain_data = ExtResource("2_2bt0b")
+chunk_size = 32
+collision_enabled = true
+collision_layer = 1
+collision_mask = 1
+shader_type = "Classic4Lite"
+custom_shader = null
+custom_globalmap_shader = null
+texture_set = SubResource("Resource_5fanw")
+render_layers = 1
+cast_shadow = 1
+shader_params/u_ground_uv_scale = 20
+shader_params/u_depth_blending = true
+shader_params/u_triplanar = true
+shader_params/u_tile_reduction = Vector4(-0.875, 0, 0, 0)
+
+[node name="HTerrainDetailLayer" type="Node3D" parent="HTerrain"]
+script = ExtResource("6_b8p7b")
+texture = ExtResource("7_qarmc")
+density = 10.0
+instance_mesh = SubResource("PrismMesh_ipy5m")
+shader_params/u_globalmap_tint_bottom = 0.0
+shader_params/u_globalmap_tint_top = 0.0
+shader_params/u_bottom_ao = 0.0
+shader_params/u_instance_scale = Vector3(0.62, 1, 0.375)
+shader_params/u_roughness = null
+metadata/_editor_icon = ExtResource("7_2naih")
+
+[node name="player" parent="." instance=ExtResource("8_sfsgw")]
+transform = Transform3D(1, 0, 0, 0, 1.655, 0, 0, 0, 1, 3.08247, 1.14665, 3.86484)
+
+[node name="water" parent="." instance=ExtResource("9_khy03")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.2337, -9.07799, 173.974)
+
+[node name="water2" parent="." instance=ExtResource("9_khy03")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.2337, -9.07799, 218.74)
+
+[node name="water3" parent="." instance=ExtResource("9_khy03")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85.5212, -9.07799, 117.668)
+
+[node name="water4" parent="." instance=ExtResource("9_khy03")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 334.898, -9.07799, 155.286)
+
+[node name="water5" parent="." instance=ExtResource("9_khy03")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 334.898, -9.07799, 186.343)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.77666, 5.72856, 4.45258)
