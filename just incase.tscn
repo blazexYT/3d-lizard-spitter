@@ -1,0 +1,95 @@
+[gd_scene load_steps=16 format=3 uid="uid://ddrxvy7m0fgc1"]
+
+[ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="1_p51h2"]
+[ext_resource type="Resource" path="res://Godot-MTerrain-plugin-master/terrainss/data.hterrain" id="2_espny"]
+[ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_p7ai3"]
+[ext_resource type="Texture2D" uid="uid://dydc8kd4oy442" path="res://dino vs lizzards/game models/terrain_slot0_albedo_bump.png" id="4_sqg45"]
+[ext_resource type="Texture2D" uid="uid://chex7w4qpw210" path="res://thing/aerial_rocks_01_diff_4k.png" id="5_jsk1e"]
+[ext_resource type="Texture2D" uid="uid://gfiu3oe1yytm" path="res://dino vs lizzards/game models/terrain_slot0_normal_roughness.png" id="6_qrm2l"]
+[ext_resource type="Texture2D" uid="uid://dibhhrtb7do4v" path="res://thing/aerial_rocks_01_rough_4k.png" id="7_xa3lf"]
+[ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_detail_layer.gd" id="8_mwdq4"]
+[ext_resource type="Texture2D" uid="uid://duaafmcfwm7f4" path="res://dino vs lizzards/extra stuff/grass.jpg" id="9_yqrqc"]
+[ext_resource type="Texture2D" uid="uid://6jmdwj3vn6m0" path="res://addons/zylann.hterrain/tools/icons/icon_detail_layer_node.svg" id="10_ybmqt"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_h0gbd"]
+
+[sub_resource type="Resource" id="Resource_2mrxy"]
+script = ExtResource("3_p7ai3")
+mode = 0
+textures = [[ExtResource("4_sqg45"), ExtResource("5_jsk1e"), null, null], [ExtResource("6_qrm2l"), ExtResource("7_xa3lf"), null, null]]
+
+[sub_resource type="PrismMesh" id="PrismMesh_bn7jh"]
+size = Vector3(0.1, 0.775, 0.1)
+
+[sub_resource type="Resource" id="Resource_shy5p"]
+script = ExtResource("3_p7ai3")
+mode = 0
+textures = [[ExtResource("4_sqg45"), ExtResource("5_jsk1e"), null, null], [ExtResource("6_qrm2l"), ExtResource("7_xa3lf"), null, null]]
+
+[sub_resource type="PrismMesh" id="PrismMesh_4ubba"]
+size = Vector3(0.1, 0.775, 0.1)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D"]
+navigation_mesh = SubResource("NavigationMesh_h0gbd")
+
+[node name="HTerrain" type="Node3D" parent="."]
+script = ExtResource("1_p51h2")
+map_scale = Vector3(10, 1, 10)
+_terrain_data = ExtResource("2_espny")
+chunk_size = 32
+collision_enabled = true
+collision_layer = 1
+collision_mask = 1
+shader_type = "Classic4Lite"
+custom_shader = null
+custom_globalmap_shader = null
+texture_set = SubResource("Resource_2mrxy")
+render_layers = 1
+cast_shadow = 1
+shader_params/u_ground_uv_scale = 20
+shader_params/u_depth_blending = true
+shader_params/u_triplanar = true
+shader_params/u_tile_reduction = Vector4(-0.875, 0, 0, 0)
+
+[node name="HTerrainDetailLayer" type="Node3D" parent="HTerrain"]
+script = ExtResource("8_mwdq4")
+texture = ExtResource("9_yqrqc")
+density = 10.0
+instance_mesh = SubResource("PrismMesh_bn7jh")
+shader_params/u_globalmap_tint_bottom = 0.0
+shader_params/u_globalmap_tint_top = 0.0
+shader_params/u_bottom_ao = 0.0
+shader_params/u_instance_scale = Vector3(0.62, 1, 0.375)
+shader_params/u_roughness = null
+metadata/_editor_icon = ExtResource("10_ybmqt")
+
+[node name="HTerrain" type="Node3D" parent="HTerrain"]
+script = ExtResource("1_p51h2")
+map_scale = Vector3(10, 1, 10)
+_terrain_data = ExtResource("2_espny")
+chunk_size = 32
+collision_enabled = true
+collision_layer = 1
+collision_mask = 1
+shader_type = "Classic4Lite"
+custom_shader = null
+custom_globalmap_shader = null
+texture_set = SubResource("Resource_shy5p")
+render_layers = 1
+cast_shadow = 1
+shader_params/u_ground_uv_scale = 20
+shader_params/u_depth_blending = true
+shader_params/u_triplanar = true
+shader_params/u_tile_reduction = Vector4(-0.875, 0, 0, 0)
+
+[node name="HTerrainDetailLayer" type="Node3D" parent="HTerrain/HTerrain"]
+script = ExtResource("8_mwdq4")
+texture = ExtResource("9_yqrqc")
+density = 10.0
+instance_mesh = SubResource("PrismMesh_4ubba")
+shader_params/u_globalmap_tint_bottom = 0.0
+shader_params/u_globalmap_tint_top = 0.0
+shader_params/u_bottom_ao = 0.0
+shader_params/u_instance_scale = Vector3(0.62, 1, 0.375)
+shader_params/u_roughness = null
+metadata/_editor_icon = ExtResource("10_ybmqt")
