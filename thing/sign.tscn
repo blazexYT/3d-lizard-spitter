@@ -16,7 +16,11 @@ mesh = SubResource("PlaneMesh_6mtuy")
 transform = Transform3D(-1.37931, -2.92108e-15, 1.78814e-07, 1.78814e-07, -6.02916e-08, 1.37931, -2.84217e-14, 1.37931, 6.02914e-08, 0.00515666, 0.0513652, -0.00978959)
 pixel_size = 0.0041
 modulate = Color(0, 1, 1, 1)
-text = "now use the spacebar
-to jump use the 
-spacebar to get on 
-that block"
+text = "just find the portal
+idk there is no threat
+i mean there is when 
+you fall off of the map
+ai broke sry it will be 
+fixed next sprint :) 
+also write a review thx 
+for playing "
