@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://gfiu3oe1yytm"
 path.s3tc="res://.godot/imported/terrain_slot0_normal_roughness.png-8188e9dfbd3caf736763d76bab7dd208.s3tc.ctex"
+path.etc2="res://.godot/imported/terrain_slot0_normal_roughness.png-8188e9dfbd3caf736763d76bab7dd208.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://dino vs lizzards/game models/terrain_slot0_normal_roughness.png"
-dest_files=["res://.godot/imported/terrain_slot0_normal_roughness.png-8188e9dfbd3caf736763d76bab7dd208.s3tc.ctex"]
+dest_files=["res://.godot/imported/terrain_slot0_normal_roughness.png-8188e9dfbd3caf736763d76bab7dd208.s3tc.ctex", "res://.godot/imported/terrain_slot0_normal_roughness.png-8188e9dfbd3caf736763d76bab7dd208.etc2.ctex"]
 
 [params]
 

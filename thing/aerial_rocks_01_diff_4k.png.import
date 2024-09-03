@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://chex7w4qpw210"
 path.s3tc="res://.godot/imported/aerial_rocks_01_diff_4k.png-60fecbf44d56edc7dda9df033e57bd83.s3tc.ctex"
+path.etc2="res://.godot/imported/aerial_rocks_01_diff_4k.png-60fecbf44d56edc7dda9df033e57bd83.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://thing/aerial_rocks_01_diff_4k.png"
-dest_files=["res://.godot/imported/aerial_rocks_01_diff_4k.png-60fecbf44d56edc7dda9df033e57bd83.s3tc.ctex"]
+dest_files=["res://.godot/imported/aerial_rocks_01_diff_4k.png-60fecbf44d56edc7dda9df033e57bd83.s3tc.ctex", "res://.godot/imported/aerial_rocks_01_diff_4k.png-60fecbf44d56edc7dda9df033e57bd83.etc2.ctex"]
 
 [params]
 

@@ -1,15 +1,7 @@
 @tool
 extends Node3D
 
-# Child node of the terrain, used to render numerous small objects on the ground
-# such as grass or rocks. They do so by using a texture covering the terrain
-# (a "detail map"), which is found in the terrain data itself.
-# A terrain can have multiple detail maps, and you can choose which one will be
-# used with `layer_index`.
-# Details use instanced rendering within their own chunk grid, scattered around
-# the player. Importantly, the position and rotation of this node don't matter,
-# and they also do NOT scale with map scale. Indeed, scaling the heightmap
-# doesn't mean we want to scale grass blades (which is not a use case I know of).
+
 
 const HTerrainData = preload("./hterrain_data.gd")
 const HT_DirectMultiMeshInstance = preload("./util/direct_multimesh_instance.gd")

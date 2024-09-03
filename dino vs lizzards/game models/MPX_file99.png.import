@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ba6gnpogp2p7y"
 path.s3tc="res://.godot/imported/MPX_file99.png-9a530fb440432bba1de48e36a4255ee6.s3tc.ctex"
+path.etc2="res://.godot/imported/MPX_file99.png-9a530fb440432bba1de48e36a4255ee6.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://dino vs lizzards/game models/MPX_file99.png"
-dest_files=["res://.godot/imported/MPX_file99.png-9a530fb440432bba1de48e36a4255ee6.s3tc.ctex"]
+dest_files=["res://.godot/imported/MPX_file99.png-9a530fb440432bba1de48e36a4255ee6.s3tc.ctex", "res://.godot/imported/MPX_file99.png-9a530fb440432bba1de48e36a4255ee6.etc2.ctex"]
 
 [params]
 

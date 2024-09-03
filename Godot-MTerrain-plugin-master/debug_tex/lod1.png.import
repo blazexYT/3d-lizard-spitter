@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bluulxv0tx4jb"
 path.s3tc="res://.godot/imported/lod1.png-d6c5935e859f7df70fa9abd44bca77cf.s3tc.ctex"
+path.etc2="res://.godot/imported/lod1.png-d6c5935e859f7df70fa9abd44bca77cf.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Godot-MTerrain-plugin-master/debug_tex/lod1.png"
-dest_files=["res://.godot/imported/lod1.png-d6c5935e859f7df70fa9abd44bca77cf.s3tc.ctex"]
+dest_files=["res://.godot/imported/lod1.png-d6c5935e859f7df70fa9abd44bca77cf.s3tc.ctex", "res://.godot/imported/lod1.png-d6c5935e859f7df70fa9abd44bca77cf.etc2.ctex"]
 
 [params]
 
